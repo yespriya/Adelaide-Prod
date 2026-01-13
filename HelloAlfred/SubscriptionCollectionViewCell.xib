@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+        <array key="Poppins-SemiBold.ttf">
+            <string>Poppins-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SubscriptionCollectionViewCell" id="gTV-IL-0wX" customClass="SubscriptionCollectionViewCell" customModule="HelloAlfred" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="290" height="529"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="290" height="529"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NJs-xF-JYp" customClass="Myview" customModule="HelloAlfred" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="290" height="529"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Standard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8rK-C3-d2d">
+                                <rect key="frame" x="32.000000000000007" y="24" width="95.666666666666686" height="28"/>
+                                <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="20"/>
+                                <color key="textColor" name="Title1"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It is a long established fact that a reader." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XVG-kW-D6I">
+                                <rect key="frame" x="32" y="52" width="172" height="33.666666666666657"/>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
+                                <color key="textColor" name="PlaceHolder"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="oc0-Az-m8C">
+                                <rect key="frame" x="32" y="97.666666666666657" width="226" height="431.33333333333337"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vqS-8a-qct">
+                                <rect key="frame" x="236" y="38" width="26" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="26" id="91X-yz-afB"/>
+                                    <constraint firstAttribute="height" constant="26" id="r5u-jr-Io2"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="radio-unselected"/>
+                                <connections>
+                                    <action selector="planSelectionTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="skk-MI-8P2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="PremiumBG"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="vqS-8a-qct" secondAttribute="trailing" constant="28" id="26N-AC-rAq"/>
+                            <constraint firstItem="vqS-8a-qct" firstAttribute="centerY" secondItem="XVG-kW-D6I" secondAttribute="centerY" constant="-18" id="9Qu-R1-Xpr"/>
+                            <constraint firstItem="oc0-Az-m8C" firstAttribute="top" secondItem="XVG-kW-D6I" secondAttribute="bottom" constant="12" id="9yR-PS-GSb"/>
+                            <constraint firstItem="8rK-C3-d2d" firstAttribute="leading" secondItem="NJs-xF-JYp" secondAttribute="leading" constant="32" id="C9t-zb-HB9"/>
+                            <constraint firstItem="vqS-8a-qct" firstAttribute="leading" secondItem="XVG-kW-D6I" secondAttribute="trailing" constant="32" id="CyD-0Q-4Tm"/>
+                            <constraint firstAttribute="trailing" secondItem="oc0-Az-m8C" secondAttribute="trailing" constant="32" id="Hlr-Yb-u9N"/>
+                            <constraint firstAttribute="bottom" secondItem="oc0-Az-m8C" secondAttribute="bottom" id="L3G-sh-79j"/>
+                            <constraint firstItem="XVG-kW-D6I" firstAttribute="top" secondItem="8rK-C3-d2d" secondAttribute="bottom" id="PsE-sz-KGu"/>
+                            <constraint firstItem="oc0-Az-m8C" firstAttribute="leading" secondItem="NJs-xF-JYp" secondAttribute="leading" constant="32" id="YXr-QK-mE4"/>
+                            <constraint firstItem="8rK-C3-d2d" firstAttribute="top" secondItem="NJs-xF-JYp" secondAttribute="top" constant="24" id="eDV-0g-Q2W"/>
+                            <constraint firstItem="XVG-kW-D6I" firstAttribute="leading" secondItem="8rK-C3-d2d" secondAttribute="leading" id="ypY-SX-oKg"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="16"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="NJs-xF-JYp" secondAttribute="trailing" id="3Nm-Kz-6vu"/>
+                <constraint firstItem="NJs-xF-JYp" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="6kV-xv-KUY"/>
+                <constraint firstAttribute="bottom" secondItem="NJs-xF-JYp" secondAttribute="bottom" id="fnZ-ci-yYh"/>
+                <constraint firstItem="NJs-xF-JYp" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="pTG-Kk-CEJ"/>
+            </constraints>
+            <size key="customSize" width="290" height="529"/>
+            <connections>
+                <outlet property="bgView" destination="NJs-xF-JYp" id="N3t-9e-GQu"/>
+                <outlet property="featureListTableView" destination="oc0-Az-m8C" id="HuN-ue-3zD"/>
+                <outlet property="selectionButton" destination="vqS-8a-qct" id="q03-He-XNa"/>
+                <outlet property="subscriptionTypeLabel" destination="8rK-C3-d2d" id="2ae-q4-dfT"/>
+            </connections>
+            <point key="canvasLocation" x="149.61832061068702" y="188.38028169014086"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="radio-unselected" width="26.666666030883789" height="26.333333969116211"/>
+        <namedColor name="PlaceHolder">
+            <color red="0.20800000429153442" green="0.28200000524520874" blue="0.40000000596046448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="PremiumBG">
+            <color red="0.86699998378753662" green="0.94900000095367432" blue="0.94099998474121094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Title1">
+            <color red="0.20000000298023224" green="0.20000000298023224" blue="0.35699999332427979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

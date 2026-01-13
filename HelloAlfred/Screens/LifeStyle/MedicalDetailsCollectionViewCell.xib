@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+        <array key="Poppins-SemiBold.ttf">
+            <string>Poppins-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MedicalDetailsCollectionViewCell" id="gTV-IL-0wX" customClass="MedicalDetailsCollectionViewCell" customModule="HelloAlfred" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="350" height="129"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="350" height="129"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gAz-Gr-tVD">
+                        <rect key="frame" x="0.0" y="0.0" width="350" height="129"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medication" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CdC-rE-TTt">
+                                <rect key="frame" x="24.000000000000007" y="24" width="108.66666666666669" height="26.666666666666671"/>
+                                <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="19"/>
+                                <color key="textColor" name="Label1"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Care Experience of a Patient in Atrial fibrillationA Complex Journey Simplified" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uaz-X7-xGB">
+                                <rect key="frame" x="24" y="62.666666666666671" width="302" height="33.666666666666671"/>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CdC-rE-TTt" firstAttribute="top" secondItem="gAz-Gr-tVD" secondAttribute="top" constant="24" id="7s7-h3-tJd"/>
+                            <constraint firstAttribute="trailing" secondItem="Uaz-X7-xGB" secondAttribute="trailing" constant="24" id="AoH-RN-3kw"/>
+                            <constraint firstItem="Uaz-X7-xGB" firstAttribute="leading" secondItem="CdC-rE-TTt" secondAttribute="leading" id="Fwv-VT-whQ"/>
+                            <constraint firstItem="CdC-rE-TTt" firstAttribute="leading" secondItem="gAz-Gr-tVD" secondAttribute="leading" constant="24" id="fzw-ih-eOa"/>
+                            <constraint firstItem="Uaz-X7-xGB" firstAttribute="top" secondItem="CdC-rE-TTt" secondAttribute="bottom" constant="12" id="kQ2-kQ-7Ta"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="gAz-Gr-tVD" secondAttribute="trailing" id="Fdv-hc-WLQ"/>
+                <constraint firstItem="gAz-Gr-tVD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="c8R-iS-X5Q"/>
+                <constraint firstItem="gAz-Gr-tVD" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="cXq-hz-kwu"/>
+                <constraint firstAttribute="bottom" secondItem="gAz-Gr-tVD" secondAttribute="bottom" id="sLi-hl-xyE"/>
+            </constraints>
+            <size key="customSize" width="350" height="129"/>
+            <point key="canvasLocation" x="200" y="26.408450704225352"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="Label1">
+            <color red="0.17299999296665192" green="0.17299999296665192" blue="0.21600000560283661" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

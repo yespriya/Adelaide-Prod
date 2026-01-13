@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CardsTableViewCell" id="KGk-i7-Jjw" customClass="CardsTableViewCell" customModule="HelloAlfred" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6xA-fz-RPW" customClass="Myview" customModule="HelloAlfred" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="4" width="320" height="36"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="citibank" translatesAutoresizingMaskIntoConstraints="NO" id="VMe-8q-g6M">
+                                <rect key="frame" x="12" y="6" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="6Ry-49-QD4"/>
+                                    <constraint firstAttribute="height" constant="24" id="o2X-Yn-8yC"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Citi Bank" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8le-3T-WAa">
+                                <rect key="frame" x="44" y="8" width="61" height="20"/>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
+                                <color key="textColor" name="SubTitle1"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="****4329" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBB-eY-XzQ">
+                                <rect key="frame" x="113" y="8" width="61.5" height="20"/>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
+                                <color key="textColor" name="SubTitle1"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="radio-unselected" translatesAutoresizingMaskIntoConstraints="NO" id="R4T-Ql-MzB">
+                                <rect key="frame" x="290" y="9" width="18" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="18" id="X72-3S-L9P"/>
+                                    <constraint firstAttribute="height" constant="18" id="hIX-Zf-Ily"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zl6-JB-kL6">
+                                <rect key="frame" x="290" y="0.5" width="18" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="radioClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="9KT-WZ-8QY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zl6-JB-kL6" firstAttribute="height" secondItem="R4T-Ql-MzB" secondAttribute="height" multiplier="1.94444" id="5ij-hN-tHH"/>
+                            <constraint firstAttribute="trailing" secondItem="R4T-Ql-MzB" secondAttribute="trailing" constant="12" id="AJH-ZE-6pz"/>
+                            <constraint firstItem="VMe-8q-g6M" firstAttribute="leading" secondItem="6xA-fz-RPW" secondAttribute="leading" constant="12" id="Dtn-yF-Tvy"/>
+                            <constraint firstItem="8le-3T-WAa" firstAttribute="centerY" secondItem="VMe-8q-g6M" secondAttribute="centerY" id="EaY-8n-fuV"/>
+                            <constraint firstItem="8le-3T-WAa" firstAttribute="leading" secondItem="VMe-8q-g6M" secondAttribute="trailing" constant="8" id="Sh8-nG-D6f"/>
+                            <constraint firstItem="kBB-eY-XzQ" firstAttribute="centerY" secondItem="VMe-8q-g6M" secondAttribute="centerY" id="VO7-Tm-E1d"/>
+                            <constraint firstItem="zl6-JB-kL6" firstAttribute="width" secondItem="R4T-Ql-MzB" secondAttribute="width" id="WBb-hJ-X08"/>
+                            <constraint firstItem="zl6-JB-kL6" firstAttribute="centerY" secondItem="R4T-Ql-MzB" secondAttribute="centerY" id="jFn-82-Ecj"/>
+                            <constraint firstItem="VMe-8q-g6M" firstAttribute="centerY" secondItem="6xA-fz-RPW" secondAttribute="centerY" id="pz2-a1-FKK"/>
+                            <constraint firstItem="R4T-Ql-MzB" firstAttribute="centerY" secondItem="kBB-eY-XzQ" secondAttribute="centerY" id="rsW-Xi-FKI"/>
+                            <constraint firstItem="kBB-eY-XzQ" firstAttribute="leading" secondItem="8le-3T-WAa" secondAttribute="trailing" constant="8" id="teP-8u-jIC"/>
+                            <constraint firstItem="zl6-JB-kL6" firstAttribute="centerX" secondItem="R4T-Ql-MzB" secondAttribute="centerX" id="vj5-4w-yDd"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="12"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" red="0.87058823529411766" green="0.8901960784313725" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="6xA-fz-RPW" secondAttribute="trailing" id="2jS-O7-J1Z"/>
+                    <constraint firstItem="6xA-fz-RPW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="5KD-KC-r53"/>
+                    <constraint firstItem="6xA-fz-RPW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="5fG-cj-aWi"/>
+                    <constraint firstAttribute="bottom" secondItem="6xA-fz-RPW" secondAttribute="bottom" constant="4" id="bLz-1n-mMf"/>
+                </constraints>
+                <userDefinedRuntimeAttributes>
+                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                        <color key="value" red="0.87058823529411766" green="0.8901960784313725" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </userDefinedRuntimeAttribute>
+                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                        <real key="value" value="1"/>
+                    </userDefinedRuntimeAttribute>
+                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                        <real key="value" value="12"/>
+                    </userDefinedRuntimeAttribute>
+                </userDefinedRuntimeAttributes>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="bankImage" destination="VMe-8q-g6M" id="APg-Wh-s7H"/>
+                <outlet property="bankNameLabel" destination="8le-3T-WAa" id="OK2-63-zpE"/>
+                <outlet property="cardnumberLabel" destination="kBB-eY-XzQ" id="2qa-Gj-RVg"/>
+                <outlet property="radioImage" destination="R4T-Ql-MzB" id="v9i-pc-Feg"/>
+            </connections>
+            <point key="canvasLocation" x="16" y="21"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="citibank" width="18.5" height="12"/>
+        <image name="radio-unselected" width="27" height="26.5"/>
+        <namedColor name="SubTitle1">
+            <color red="0.019999999552965164" green="0.11400000005960464" blue="0.2630000114440918" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

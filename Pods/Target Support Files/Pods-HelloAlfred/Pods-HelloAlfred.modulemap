@@ -1,0 +1,6 @@
+framework module Pods_HelloAlfred {
+  umbrella header "Pods-HelloAlfred-umbrella.h"
+
+  export *
+  module * { export * }
+}

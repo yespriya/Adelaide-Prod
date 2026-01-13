@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="FeatureListTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeatureListTableViewCell" id="KGk-i7-Jjw" customClass="FeatureListTableViewCell" customModule="HelloAlfred" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="available" translatesAutoresizingMaskIntoConstraints="NO" id="IoP-YZ-G5U">
+                        <rect key="frame" x="306" y="15" width="14" height="14"/>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dot" translatesAutoresizingMaskIntoConstraints="NO" id="J10-gj-pcI">
+                        <rect key="frame" x="0.0" y="19.666666666666668" width="5" height="5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="5" id="BOc-vC-TFw"/>
+                            <constraint firstAttribute="width" constant="5" id="tLN-Hs-uKA"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Patient Registration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="852-S1-H4W">
+                        <rect key="frame" x="16.999999999999993" y="14.333333333333336" width="107.33333333333331" height="15.666666666666664"/>
+                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="11"/>
+                        <color key="textColor" name="Label1"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="IoP-YZ-G5U" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="0nY-Sj-Ohu"/>
+                    <constraint firstItem="J10-gj-pcI" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Gkf-55-sOW"/>
+                    <constraint firstItem="852-S1-H4W" firstAttribute="centerY" secondItem="J10-gj-pcI" secondAttribute="centerY" id="PXO-WO-l6e"/>
+                    <constraint firstItem="J10-gj-pcI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Q3K-fM-boj"/>
+                    <constraint firstAttribute="trailing" secondItem="IoP-YZ-G5U" secondAttribute="trailing" id="n9R-Vd-Pfu"/>
+                    <constraint firstItem="852-S1-H4W" firstAttribute="leading" secondItem="J10-gj-pcI" secondAttribute="trailing" constant="12" id="qjm-8I-Sa9"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="availabilityImage" destination="IoP-YZ-G5U" id="qOZ-3Y-xeo"/>
+                <outlet property="featureLabel" destination="852-S1-H4W" id="2mJ-gM-pfB"/>
+            </connections>
+            <point key="canvasLocation" x="-31" y="20"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="available" width="14" height="14"/>
+        <image name="dot" width="512" height="512"/>
+        <namedColor name="Label1">
+            <color red="0.17254901960784313" green="0.17254901960784313" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

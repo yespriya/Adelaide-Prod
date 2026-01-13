@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DashboardCategoriesTableViewCell" rowHeight="64" id="KGk-i7-Jjw" customClass="DashboardCategoriesTableViewCell" customModule="HelloAlfred" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="417" height="64"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="417" height="64"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RtP-hP-gHY" customClass="Myview" customModule="HelloAlfred" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="6" width="417" height="52"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Health Hub" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0wk-B9-HLo">
+                                <rect key="frame" x="23.999999999999993" y="13.333333333333334" width="99.333333333333314" height="25.333333333333329"/>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="18"/>
+                                <color key="textColor" name="Label1"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="nBW-5L-0dp">
+                                <rect key="frame" x="373.33333333333331" y="3" width="19.666666666666686" height="46.333333333333336"/>
+                                <color key="tintColor" red="0.17254901960784313" green="0.17254901960784313" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" name="CompletedBG"/>
+                        <constraints>
+                            <constraint firstItem="0wk-B9-HLo" firstAttribute="centerY" secondItem="RtP-hP-gHY" secondAttribute="centerY" id="ONk-UD-hak"/>
+                            <constraint firstItem="nBW-5L-0dp" firstAttribute="top" secondItem="RtP-hP-gHY" secondAttribute="top" id="QO2-1q-jOX"/>
+                            <constraint firstItem="0wk-B9-HLo" firstAttribute="leading" secondItem="RtP-hP-gHY" secondAttribute="leading" constant="24" id="Zxt-5y-zxP"/>
+                            <constraint firstAttribute="bottom" secondItem="nBW-5L-0dp" secondAttribute="bottom" id="aDn-2X-2Un"/>
+                            <constraint firstAttribute="trailing" secondItem="nBW-5L-0dp" secondAttribute="trailing" constant="24" id="wae-KM-xWQ"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="16"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="RtP-hP-gHY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="L8D-WG-INS"/>
+                    <constraint firstItem="RtP-hP-gHY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="MQQ-ur-Zac"/>
+                    <constraint firstAttribute="bottom" secondItem="RtP-hP-gHY" secondAttribute="bottom" constant="6" id="Q0n-ad-kuj"/>
+                    <constraint firstAttribute="trailing" secondItem="RtP-hP-gHY" secondAttribute="trailing" id="fsy-Gn-AAA"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="bgView" destination="RtP-hP-gHY" id="ckb-it-UNl"/>
+                <outlet property="categoriesLabel" destination="0wk-B9-HLo" id="czF-g7-D66"/>
+            </connections>
+            <point key="canvasLocation" x="87.786259541984734" y="5.6338028169014089"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="arrow.right" catalog="system" width="128" height="95"/>
+        <namedColor name="CompletedBG">
+            <color red="0.86299997568130493" green="0.94099998474121094" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Label1">
+            <color red="0.17299999296665192" green="0.17299999296665192" blue="0.21600000560283661" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

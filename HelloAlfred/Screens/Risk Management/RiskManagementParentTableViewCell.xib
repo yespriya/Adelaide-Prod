@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="256" id="KGk-i7-Jjw" customClass="RiskManagementParentTableViewCell" customModule="HelloAlfred" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="443" height="256"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="443" height="256"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lkf-xC-lvs">
+                        <rect key="frame" x="12" y="12" width="419" height="232"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="aze-6S-NCQ">
+                                <rect key="frame" x="12" y="12" width="395" height="208"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aze-6S-NCQ" firstAttribute="top" secondItem="lkf-xC-lvs" secondAttribute="top" constant="12" id="Kmk-ZO-BMq"/>
+                            <constraint firstAttribute="trailing" secondItem="aze-6S-NCQ" secondAttribute="trailing" constant="12" id="a0t-l3-5hk"/>
+                            <constraint firstAttribute="bottom" secondItem="aze-6S-NCQ" secondAttribute="bottom" constant="12" id="ut2-qG-8AU"/>
+                            <constraint firstItem="aze-6S-NCQ" firstAttribute="leading" secondItem="lkf-xC-lvs" secondAttribute="leading" constant="12" id="xC1-h6-OBT"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uUX-Pf-Vcy">
+                        <rect key="frame" x="12" y="12" width="419" height="232"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="atrial-fibrillation" translatesAutoresizingMaskIntoConstraints="NO" id="XNl-jJ-VVq">
+                                <rect key="frame" x="0.0" y="0.0" width="419" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="7TO-EV-HCc"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHz-uA-Def">
+                                <rect key="frame" x="348" y="203" width="59" height="29"/>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Click here">
+                                    <color key="titleColor" name="SelectedButtonText"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yXG-XW-Gh1">
+                                <rect key="frame" x="24" y="188" width="371" height="11"/>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XNl-jJ-VVq" firstAttribute="top" secondItem="uUX-Pf-Vcy" secondAttribute="top" id="2Le-rE-zGS"/>
+                            <constraint firstAttribute="trailing" secondItem="yXG-XW-Gh1" secondAttribute="trailing" constant="24" id="2od-8X-NEF"/>
+                            <constraint firstItem="yXG-XW-Gh1" firstAttribute="top" secondItem="XNl-jJ-VVq" secondAttribute="bottom" constant="8" id="8VS-rC-F6A"/>
+                            <constraint firstAttribute="trailing" secondItem="XNl-jJ-VVq" secondAttribute="trailing" id="Ibr-sA-NBM"/>
+                            <constraint firstAttribute="trailing" secondItem="dHz-uA-Def" secondAttribute="trailing" constant="12" id="YUf-NT-ZPM"/>
+                            <constraint firstItem="dHz-uA-Def" firstAttribute="top" secondItem="yXG-XW-Gh1" secondAttribute="bottom" constant="4" id="cZU-WU-a01"/>
+                            <constraint firstItem="XNl-jJ-VVq" firstAttribute="leading" secondItem="uUX-Pf-Vcy" secondAttribute="leading" id="eBY-cf-4Z7"/>
+                            <constraint firstAttribute="bottom" secondItem="dHz-uA-Def" secondAttribute="bottom" id="h5K-qI-Z9k"/>
+                            <constraint firstItem="yXG-XW-Gh1" firstAttribute="leading" secondItem="uUX-Pf-Vcy" secondAttribute="leading" constant="24" id="yCq-ck-I8k"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="lkf-xC-lvs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="8Bo-YS-JwX"/>
+                    <constraint firstItem="lkf-xC-lvs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="BAU-Vj-cW0"/>
+                    <constraint firstItem="uUX-Pf-Vcy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="E3a-Ce-WK1"/>
+                    <constraint firstAttribute="trailing" secondItem="uUX-Pf-Vcy" secondAttribute="trailing" constant="12" id="OGa-wY-io9"/>
+                    <constraint firstItem="uUX-Pf-Vcy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="dnU-0b-j7O"/>
+                    <constraint firstAttribute="bottom" secondItem="uUX-Pf-Vcy" secondAttribute="bottom" constant="12" id="efe-fe-6Tb"/>
+                    <constraint firstAttribute="trailing" secondItem="lkf-xC-lvs" secondAttribute="trailing" constant="12" id="nW0-M4-htj"/>
+                    <constraint firstAttribute="bottom" secondItem="lkf-xC-lvs" secondAttribute="bottom" constant="12" id="uM9-pw-gpW"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="backView" destination="lkf-xC-lvs" id="2Tj-eU-LNf"/>
+                <outlet property="containerView" destination="uUX-Pf-Vcy" id="fXY-fm-xpe"/>
+                <outlet property="descriptionLabel" destination="yXG-XW-Gh1" id="Oam-qM-Shp"/>
+                <outlet property="headerImageView" destination="XNl-jJ-VVq" id="fs2-df-vEL"/>
+                <outlet property="imageView" destination="XNl-jJ-VVq" id="xsd-ic-yTN"/>
+                <outlet property="riskListTableView" destination="aze-6S-NCQ" id="zIl-zv-Bxc"/>
+            </connections>
+            <point key="canvasLocation" x="136.64122137404578" y="73.239436619718319"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="atrial-fibrillation" width="332" height="100"/>
+        <namedColor name="SelectedButtonText">
+            <color red="0.10999999940395355" green="0.46700000762939453" blue="0.79199999570846558" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
