@@ -96,7 +96,7 @@ class SignInViewController: BaseViewController {
          "username": userNameTextFeild.text ?? "",
          "password": passwordTextFeild.text ?? "",
          "session_id": "",
-         "subdomain": "qa.helloalfred.ai/be/"
+         "subdomain": "api.adelaide.helloalfred.ai"
         ] as [String : Any]
         
         
