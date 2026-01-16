@@ -19,10 +19,13 @@ class DashboardLifeStyleViewController: UIViewController
     @IBOutlet var videoCollectionView: UICollectionView!
     
     @IBOutlet var lifeStyleCategoriesCVHeight: NSLayoutConstraint!
+    let viewModel = HealthDetailsViewModel()
+    
     var videoImages = ["thumbnail-video1","thumbnail-video2"]
     @IBOutlet var lifeStyleCategoriesCollectionView: UICollectionView!
     
     // static data
+    
     let lifeStyleCategories = [
         Category(name: "Meditation", unit: "Hrs", image: "lifestyle-meditation", bgColor: "8B80F8",value: "01"),
         Category(name: "Stress", unit: "Normal", image: "stress", bgColor: "AF8EFF",value: "40"),
@@ -30,19 +33,24 @@ class DashboardLifeStyleViewController: UIViewController
         Category(name: "Sleep", unit: "Hrs", image: "lifestyle-sleep", bgColor: "1AC9DD",value: "08")
     ]
     
+    var riskFactorsCategories:[Category] = []
+    
+    /*
     let riskFactorsCategories = [
         Category(name: "Blood pressure", unit: "/80", image: "lifestyle-bloodpressure", bgColor: "8B80F8",value: "130"),
         Category(name: "Blood Sugar", unit: "Normal", image: "blood-sugar", bgColor: "AF8EFF",value: "5.8"),
         Category(name: "Weight", unit: "Kgs", image: "body-weight", bgColor: "4C5A81",value: "80"),
         Category(name: "Pulse", unit: "", image: "heart_pulse", bgColor: "1AC9DD",value: "79")
     ]
+    */
     
     let afibCategories = [
         Category(name: "Pulse", unit: "", image: "heart_pulse", bgColor: "1AC9DD",value: "98"),
         Category(name: "Goal Reached", unit: "", image: "goal_reached", bgColor: "8B80F8",value: "48")
     ]
     var leftMenu: SideMenuViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "SideMenuViewController") as! SideMenuViewController
-    var selectedCategory = 0
+    var selectedCategory = 2
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         lifeStyleCategoriesCollectionView.delegate = self
@@ -60,6 +68,7 @@ class DashboardLifeStyleViewController: UIViewController
             riskFactorsCategories: riskFactorsCategories,
             afibCategories: afibCategories
         )
+        fetchLinearChartApiCall()
     }
     
     
@@ -101,6 +110,55 @@ class DashboardLifeStyleViewController: UIViewController
         }, completion: nil)
     }
     
+    func fetchLinearChartApiCall()
+    {
+        let params: [String: Any] = ["start_date":"", "end_date": ""]
+        
+        print("params   \(params)")
+        viewModel.fetchLinearChartData(params: params)
+        viewModel.LinearChartDataFetchSuccess = {
+            let chartData = self.viewModel.LinearChartDataRes?.data ?? []
+            print("ccoount \(chartData.count)")
+            for data in chartData {
+                self.riskFactorsCategories = [
+                    Category(
+                        name: "Blood pressure",
+                        unit: "/\(data.diastolic_p?.description ?? "")",
+                        image: "lifestyle-bloodpressure",
+                        bgColor: "8B80F8",
+                        value: data.systolic_p?.description ?? ""
+                    ),
+                    Category(
+                        name: "Weight",
+                        unit: "Kgs",
+                        image: "body-weight",
+                        bgColor: "4C5A81",
+                        value: data.weight?.description ?? "0"
+                    ),
+                    Category(
+                        name: "Pulse",
+                        unit: "",
+                        image: "heart_pulse",
+                        bgColor: "1AC9DD",
+                        value: data.pulse?.description ?? "0"
+                    )
+                ]
+            }
+            self.lifeStyleCategoriesCollectionView.reloadData()
+        }
+        viewModel.loadingStatus =
+        {
+            if self.viewModel.isLoading {
+                self.activityIndicator(self.view, startAnimate: true)
+            } else {
+                self.activityIndicator(self.view, startAnimate: false)
+            }
+        }
+        
+        viewModel.errorMessageAlert = {
+            self.showAlert(self.viewModel.errorMessage ?? "Error")
+        }
+    }
 }
 
 extension DashboardLifeStyleViewController: UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{

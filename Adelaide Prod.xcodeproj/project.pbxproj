@@ -408,7 +408,7 @@
 		84E8DB5C2C5E2CD800A03056 /* HealthHubOverViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthHubOverViewViewController.swift; sourceTree = "<group>"; };
 		84E8DB5E2C5E2DD500A03056 /* WeekSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekSelectionTableViewCell.swift; sourceTree = "<group>"; };
 		84E8DB602C5E46D600A03056 /* HealthHubOverviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthHubOverviewTableViewCell.swift; sourceTree = "<group>"; };
-		84E8E9732B8C66660092F746 /* HelloAlfred.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloAlfred.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84E8E9732B8C66660092F746 /* Adelaide Prod.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Adelaide Prod.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E8E9762B8C66660092F746 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84E8E97A2B8C66660092F746 /* AppIntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntroViewController.swift; sourceTree = "<group>"; };
 		84E8E97F2B8C66680092F746 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -865,7 +865,7 @@
 		84E8E9742B8C66660092F746 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				84E8E9732B8C66660092F746 /* HelloAlfred.app */,
+				84E8E9732B8C66660092F746 /* Adelaide Prod.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -924,9 +924,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		84E8E9722B8C66660092F746 /* HelloAlfred */ = {
+		84E8E9722B8C66660092F746 /* Adelaide Prod */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 84E8E9872B8C66680092F746 /* Build configuration list for PBXNativeTarget "HelloAlfred" */;
+			buildConfigurationList = 84E8E9872B8C66680092F746 /* Build configuration list for PBXNativeTarget "Adelaide Prod" */;
 			buildPhases = (
 				4E1CF12E8E5D7B81C7CF9623 /* [CP] Check Pods Manifest.lock */,
 				84E8E96F2B8C66660092F746 /* Sources */,
@@ -940,7 +940,7 @@
 			);
 			dependencies = (
 			);
-			name = HelloAlfred;
+			name = "Adelaide Prod";
 			packageProductDependencies = (
 				84F4C0792D49F6BB0078210F /* JWTKit */,
 				843918342D4B8FF300FDAF4C /* SwiftSoup */,
@@ -956,7 +956,7 @@
 				84A14DB22EE097A500C45F7D /* FLAnimatedImage */,
 			);
 			productName = HelloAlfred;
-			productReference = 84E8E9732B8C66660092F746 /* HelloAlfred.app */;
+			productReference = 84E8E9732B8C66660092F746 /* Adelaide Prod.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -974,7 +974,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 84E8E96E2B8C66650092F746 /* Build configuration list for PBXProject "HelloAlfred" */;
+			buildConfigurationList = 84E8E96E2B8C66650092F746 /* Build configuration list for PBXProject "Adelaide Prod" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -999,7 +999,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				84E8E9722B8C66660092F746 /* HelloAlfred */,
+				84E8E9722B8C66660092F746 /* Adelaide Prod */,
 			);
 		};
 /* End PBXProject section */
@@ -1492,7 +1492,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		84E8E96E2B8C66650092F746 /* Build configuration list for PBXProject "HelloAlfred" */ = {
+		84E8E96E2B8C66650092F746 /* Build configuration list for PBXProject "Adelaide Prod" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				84E8E9852B8C66680092F746 /* Debug */,
@@ -1501,7 +1501,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		84E8E9872B8C66680092F746 /* Build configuration list for PBXNativeTarget "HelloAlfred" */ = {
+		84E8E9872B8C66680092F746 /* Build configuration list for PBXNativeTarget "Adelaide Prod" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				84E8E9882B8C66680092F746 /* Debug */,
