@@ -20,6 +20,7 @@ class DashboardLifeStyleViewController: UIViewController
     
     @IBOutlet var lifeStyleCategoriesCVHeight: NSLayoutConstraint!
     let viewModel = HealthDetailsViewModel()
+    let healthViewModel = HealthDetailsViewModel()
     
     var videoImages = ["thumbnail-video1","thumbnail-video2"]
     @IBOutlet var lifeStyleCategoriesCollectionView: UICollectionView!
@@ -68,7 +69,7 @@ class DashboardLifeStyleViewController: UIViewController
             riskFactorsCategories: riskFactorsCategories,
             afibCategories: afibCategories
         )
-        fetchLinearChartApiCall()
+        fetchLatestExpertMonitoringData()
     }
     
     
@@ -110,53 +111,48 @@ class DashboardLifeStyleViewController: UIViewController
         }, completion: nil)
     }
     
-    func fetchLinearChartApiCall()
+    func fetchLatestExpertMonitoringData()
     {
-        let params: [String: Any] = ["start_date":"", "end_date": ""]
-        
-        print("params   \(params)")
-        viewModel.fetchLinearChartData(params: params)
-        viewModel.LinearChartDataFetchSuccess = {
-            let chartData = self.viewModel.LinearChartDataRes?.data ?? []
-            print("ccoount \(chartData.count)")
-            for data in chartData {
-                self.riskFactorsCategories = [
-                    Category(
-                        name: "Blood pressure",
-                        unit: "/\(data.diastolic_p?.description ?? "")",
-                        image: "lifestyle-bloodpressure",
-                        bgColor: "8B80F8",
-                        value: data.systolic_p?.description ?? ""
-                    ),
-                    Category(
-                        name: "Weight",
-                        unit: "Kgs",
-                        image: "body-weight",
-                        bgColor: "4C5A81",
-                        value: data.weight?.description ?? "0"
-                    ),
-                    Category(
-                        name: "Pulse",
-                        unit: "",
-                        image: "heart_pulse",
-                        bgColor: "1AC9DD",
-                        value: data.pulse?.description ?? "0"
-                    )
-                ]
-            }
+        healthViewModel.fetchLastUpdateExpertMonitoringDetail()
+        healthViewModel.lastUpdatedExpertMonitoringDataFetchSuccess = {
+            let data = self.healthViewModel.lastUpdateExpertMonitoringRes?.data
+            self.riskFactorsCategories = [
+                Category(
+                    name: "Blood pressure",
+                    unit: "",
+                    image: "lifestyle-bloodpressure",
+                    bgColor: "8B80F8",
+                    value: data?.bloodp ?? ""
+                ),
+                Category(
+                    name: "Weight",
+                    unit: "Kgs",
+                    image: "body-weight",
+                    bgColor: "4C5A81",
+                    value: data?.weight?.description ?? "0"
+                ),
+                Category(
+                    name: "Pulse",
+                    unit: "",
+                    image: "heart_pulse",
+                    bgColor: "1AC9DD",
+                    value: data?.pulse?.description ?? "0"
+                )
+            ]
+            
             self.lifeStyleCategoriesCollectionView.reloadData()
         }
-        viewModel.loadingStatus =
+        healthViewModel.loadingStatus =
         {
-            if self.viewModel.isLoading {
+            if self.healthViewModel.isLoading {
                 self.activityIndicator(self.view, startAnimate: true)
             } else {
                 self.activityIndicator(self.view, startAnimate: false)
             }
         }
-        
-        viewModel.errorMessageAlert = {
-            self.showAlert(self.viewModel.errorMessage ?? "Error")
+        healthViewModel.errorMessageAlert = {
+            self.showAlert(self.healthViewModel.errorMessage ?? "Error")
+           
         }
     }
 }
@@ -286,9 +282,5 @@ extension DashboardLifeStyleViewController: UICollectionViewDelegate, UICollecti
                 return CGSize(width: width, height: width + 44) // Square cells
             }
         }
-        
     }
-    
 }
-
-

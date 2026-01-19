@@ -241,7 +241,7 @@ class EducationalChatViewController: BaseViewController,KeyboardHandling, SFSpee
     }
     
     func sendPostRequest(message: String, completion: @escaping (String) -> Void) {
-        guard let url = URL(string: "https://qa.helloalfred.ai/stream_api/bots/knowledge-bot/v1/ask/stream") else {
+        guard let url = URL(string: "https://adelaide-stream.helloalfred.ai/bots/knowledge-bot/v1/ask/stream") else {
             print("Invalid URL")
             return
         }
