@@ -151,7 +151,7 @@ class DashboardLifeStyleViewController: UIViewController
             }
         }
         healthViewModel.errorMessageAlert = {
-            self.showAlert(self.healthViewModel.errorMessage ?? "Error")
+            self.showAlert("Vital info is not recorded")
            
         }
     }

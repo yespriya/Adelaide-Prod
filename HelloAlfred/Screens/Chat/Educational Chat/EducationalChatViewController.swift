@@ -128,7 +128,7 @@ class EducationalChatViewController: BaseViewController,KeyboardHandling, SFSpee
             showAlert("Please enter a text")
             return
         }
-        appendMessage(text, isSender: true)
+        appendMessage(text.trimmingCharacters(in: .whitespacesAndNewlines), isSender: true)
         // updateMessageApiCall(text: text)
         
         inputMessageTextView.isEditable = false
@@ -136,7 +136,12 @@ class EducationalChatViewController: BaseViewController,KeyboardHandling, SFSpee
         self.dataLoading = true
         tableView.reloadData()
         scrollToLast()
-        sendPostRequest(message: text) { response in
+        
+        eduChatViewModel.sendPostRequest(message: text.trimmingCharacters(in: .whitespacesAndNewlines), sessionID: sessionID ?? "")
+        
+        sendPostRequest(message: text.trimmingCharacters(in: .whitespacesAndNewlines)) { response in
+            print("Response: ", response)
+            
             if(self.messages[self.messages.count - 1].text == "LOADING")
             {
                 self.messages.removeLast()
@@ -149,6 +154,7 @@ class EducationalChatViewController: BaseViewController,KeyboardHandling, SFSpee
             {
                 self.updateLastMessage(with: response)
             }
+            
         }
         inputMessageTextView.text = ""
     }
@@ -455,9 +461,8 @@ extension EducationalChatViewController: UITableViewDelegate, UITableViewDataSou
         cell.dataLoading = dataLoading
         cell.showLikeView = true
         
-        print("dataaa0 \(messages.count-1) \(indexPath.row)  \(indexPath.row == (messages.count - 1) ? true : false)")
-        var val = indexPath.row == (messages.count - 1) ? true : false
-        print("dataaa2 \(val)")
+       
+        let val = indexPath.row == (messages.count - 1) ? true : false
         cell.lastMessage = val
         cell.configure(with: messages[indexPath.row], idx: indexPath.row)
         

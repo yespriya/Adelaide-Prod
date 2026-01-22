@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
         // Override point for customization after application launch.
+        NotificationCenter.default.addObserver(self, selector: #selector(handleForceLogout), name: .forceLogout, object: nil)
+
         FirebaseApp.configure()
         if UserDefaults.standard.bool(forKey: "IS_LOGGED_IN") {
             gotoHome()
@@ -31,24 +33,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate
     
     
     //when token expired redirects to login
-    func redirectToLogin(errorMsg: String?) {
-        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewcontroller: SignInViewController = storyboard.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
-        viewcontroller.modalTransitionStyle = .crossDissolve
-        viewcontroller.clearStoredData()
-        let navController:UINavigationController = UINavigationController.init(rootViewController: viewcontroller)
-        
-        window?.rootViewController = navController
-        window?.makeKeyAndVisible()
-        self.displayLoginPopUpAdmin(vc: viewcontroller, errorMsg: errorMsg ?? "You are not authorized!")
+    
+}
+
+
+extension AppDelegate {
+    @objc func handleForceLogout() {
+        DispatchQueue.main.async {
+            print("🚪 Force logout triggered")
+
+            UserDefaults.standard.removeObject(forKey: "Authorization")
+            UserDefaults.standard.removeObject(forKey: "PateintId")
+            UserDefaults.standard.removeObject(forKey: "Username")
+            UserDefaults.standard.removeObject(forKey: "ProfileImg")
+            UserDefaults.standard.removeObject(forKey: "IS_LOGGED_IN")
+            UserDefaults.standard.synchronize()
+
+            let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewcontroller: SignInViewController = storyboard.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
+            viewcontroller.modalTransitionStyle = .crossDissolve
+            viewcontroller.clearStoredData()
+            let navController:UINavigationController = UINavigationController.init(rootViewController: viewcontroller)
+            
+            self.window?.rootViewController = navController
+            self.window?.makeKeyAndVisible()
+        }
     }
-    func gotoHome() {
-        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewcontroller: DashboardViewController = storyboard.instantiateViewController(withIdentifier: "DashboardViewController") as! DashboardViewController
-        viewcontroller.modalTransitionStyle = .crossDissolve
-        let navController:UINavigationController = UINavigationController.init(rootViewController: viewcontroller)
-        window?.rootViewController = navController
-        // window?.makeKeyAndVisible()
+    
+    func displayLoginPopUpAdmin(vc: UIViewController, errorMsg: String) {
+
+        let alert = UIAlertController(title: "", message: errorMsg, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { _ in
+            vc.dismiss(animated: true)
+        }))
+        vc.present(alert, animated: true, completion: nil)
+        return
+        
     }
     
     func gotoOnboardingScreen()
@@ -70,18 +90,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate
             window?.rootViewController = navController
             window?.makeKeyAndVisible()
         }
-        
-        
     }
-    func displayLoginPopUpAdmin(vc: UIViewController, errorMsg: String) {
-
-        let alert = UIAlertController(title: "", message: errorMsg, preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { _ in
-            vc.dismiss(animated: true)
-        }))
-        vc.present(alert, animated: true, completion: nil)
-        return
+    
+    func redirectToLogin(errorMsg: String?) {
+        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewcontroller: SignInViewController = storyboard.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
+        viewcontroller.modalTransitionStyle = .crossDissolve
+        viewcontroller.clearStoredData()
+        let navController:UINavigationController = UINavigationController.init(rootViewController: viewcontroller)
         
+        window?.rootViewController = navController
+        window?.makeKeyAndVisible()
+        self.displayLoginPopUpAdmin(vc: viewcontroller, errorMsg: errorMsg ?? "You are not authorized!")
+    }
+    
+    func gotoHome() {
+        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewcontroller: DashboardViewController = storyboard.instantiateViewController(withIdentifier: "DashboardViewController") as! DashboardViewController
+        viewcontroller.modalTransitionStyle = .crossDissolve
+        let navController:UINavigationController = UINavigationController.init(rootViewController: viewcontroller)
+        window?.rootViewController = navController
+        // window?.makeKeyAndVisible()
     }
 }
 

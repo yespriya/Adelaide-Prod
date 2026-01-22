@@ -193,6 +193,7 @@
 		84E309292D02E2CD00F53AEF /* VideoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E309282D02E2C200F53AEF /* VideoListViewModel.swift */; };
 		84E3092B2D02E56500F53AEF /* VideoListContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3092A2D02E55D00F53AEF /* VideoListContentModel.swift */; };
 		84E7CD022CA4144100F2012B /* TermsAndConditionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7CD012CA4144100F2012B /* TermsAndConditionsViewController.swift */; };
+		84E81EAC2F213EF2007ED7E3 /* Notification+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E81EAB2F213EF2007ED7E3 /* Notification+.swift */; };
 		84E8DB5B2C5E2CB500A03056 /* SelectWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E8DB5A2C5E2CB500A03056 /* SelectWeekViewController.swift */; };
 		84E8DB5D2C5E2CD800A03056 /* HealthHubOverViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E8DB5C2C5E2CD800A03056 /* HealthHubOverViewViewController.swift */; };
 		84E8DB5F2C5E2DD500A03056 /* WeekSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E8DB5E2C5E2DD500A03056 /* WeekSelectionTableViewCell.swift */; };
@@ -404,6 +405,7 @@
 		84E309282D02E2C200F53AEF /* VideoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListViewModel.swift; sourceTree = "<group>"; };
 		84E3092A2D02E55D00F53AEF /* VideoListContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListContentModel.swift; sourceTree = "<group>"; };
 		84E7CD012CA4144100F2012B /* TermsAndConditionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsViewController.swift; sourceTree = "<group>"; };
+		84E81EAB2F213EF2007ED7E3 /* Notification+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+.swift"; sourceTree = "<group>"; };
 		84E8DB5A2C5E2CB500A03056 /* SelectWeekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectWeekViewController.swift; sourceTree = "<group>"; };
 		84E8DB5C2C5E2CD800A03056 /* HealthHubOverViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthHubOverViewViewController.swift; sourceTree = "<group>"; };
 		84E8DB5E2C5E2DD500A03056 /* WeekSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekSelectionTableViewCell.swift; sourceTree = "<group>"; };
@@ -551,6 +553,7 @@
 		84635F572B99E25F0042B619 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				84E81EAB2F213EF2007ED7E3 /* Notification+.swift */,
 				843B4BAF2F02D30500E106BD /* Struct+.swift */,
 				5051CC2E2E23897C00E1F6AA /* TokenManager.swift */,
 				84635F542B99E2520042B619 /* APIClient.swift */,
@@ -1180,6 +1183,7 @@
 				84635F512B99E2490042B619 /* ChatViewModel.swift in Sources */,
 				84635F442B988F3A0042B619 /* PasswordViewController.swift in Sources */,
 				8492EBBA2C73563700F975B8 /* ImageCollectionViewCell.swift in Sources */,
+				84E81EAC2F213EF2007ED7E3 /* Notification+.swift in Sources */,
 				845D12DF2C04AE2400FB205B /* LastUpdateHealthDetailsModel.swift in Sources */,
 				84E309272D02DE1700F53AEF /* VideoListTableViewCell.swift in Sources */,
 				507E12E82E45073F00B930C9 /* SimpleOptionView.swift in Sources */,

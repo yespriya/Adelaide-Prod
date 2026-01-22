@@ -165,8 +165,7 @@ class ListOfSymptomsViewController: UIViewController {
             }
         }
         dashboardViewModel.errorMessageAlert = {
-            print(self.dashboardViewModel.errorMessage ?? "Error")
-//            self.showAlert(self.dashboardViewModel.errorMessage ?? "Error")
+            self.showAlert(self.dashboardViewModel.errorMessage ?? "Error")
         }
     }
     
