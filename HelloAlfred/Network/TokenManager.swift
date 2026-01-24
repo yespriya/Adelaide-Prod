@@ -127,17 +127,7 @@ class TokenManager {
     
     func forceLogout() {
         print("🔒 Logging out user...")
-
-        /*
-         DispatchQueue.main.async {
-            let topVc = self.topViewController()
-            topVc?.clearStoredData()
-            topVc?.navigateTo(viewController: SignInViewController.self, withIdentifier: "SignInViewController")
-        }
-        */
-        DispatchQueue.main.async {
-            NotificationCenter.default.post(name: .forceLogout, object: nil)
-        }
+        NotificationCenter.default.post(name: .forceLogout, object: nil)
     }
     
     func topViewController(base: UIViewController? = UIApplication.shared.connectedScenes

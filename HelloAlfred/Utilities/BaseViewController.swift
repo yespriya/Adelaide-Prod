@@ -7,9 +7,17 @@ class BaseViewController: UIViewController, UITextFieldDelegate {
         
         // Add tap gesture recognizer to dismiss keyboard
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(handleForceLogout), name: .forceLogout, object: nil)
+        
         view.addGestureRecognizer(tapGesture)
         
         setupTextFields()
+    }
+    
+    @objc func handleForceLogout() {
+        clearStoredData()
+        navigateTo(viewController: SignInViewController.self, withIdentifier: "SignInViewController")
     }
     
     func setupTextFields() {

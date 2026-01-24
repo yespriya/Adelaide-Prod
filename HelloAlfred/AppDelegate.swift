@@ -18,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
         // Override point for customization after application launch.
-        NotificationCenter.default.addObserver(self, selector: #selector(handleForceLogout), name: .forceLogout, object: nil)
 
         FirebaseApp.configure()
         if UserDefaults.standard.bool(forKey: "IS_LOGGED_IN") {
@@ -38,27 +37,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate
 
 
 extension AppDelegate {
-    @objc func handleForceLogout() {
-        DispatchQueue.main.async {
-            print("🚪 Force logout triggered")
-
-            UserDefaults.standard.removeObject(forKey: "Authorization")
-            UserDefaults.standard.removeObject(forKey: "PateintId")
-            UserDefaults.standard.removeObject(forKey: "Username")
-            UserDefaults.standard.removeObject(forKey: "ProfileImg")
-            UserDefaults.standard.removeObject(forKey: "IS_LOGGED_IN")
-            UserDefaults.standard.synchronize()
-
-            let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let viewcontroller: SignInViewController = storyboard.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
-            viewcontroller.modalTransitionStyle = .crossDissolve
-            viewcontroller.clearStoredData()
-            let navController:UINavigationController = UINavigationController.init(rootViewController: viewcontroller)
-            
-            self.window?.rootViewController = navController
-            self.window?.makeKeyAndVisible()
-        }
-    }
     
     func displayLoginPopUpAdmin(vc: UIViewController, errorMsg: String) {
 

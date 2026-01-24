@@ -10,7 +10,7 @@ import AuthenticationServices
 import GoogleSignIn
 
 class SignInViewController: BaseViewController {
-    let viewModel=AuthViewModel()
+    let viewModel = AuthViewModel()
 
     @IBOutlet var helloImage: UIImageView!
     @IBOutlet var passwordTextFeild: UnderlinedTextField!
