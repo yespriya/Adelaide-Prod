@@ -81,6 +81,7 @@ class EducationChatViewModel {
             }
         }
     }
+    
     func preferenceChat(params: [String: Any]) {
         isLoading = true
         APIClient.preferenceChat(params: params) { result in
@@ -110,44 +111,6 @@ class EducationChatViewModel {
                 debugPrint("Request failed with error: \(error.localizedDescription)")
                 self.errorMessage = error.localizedDescription
                 self.error = error
-            }
-        }
-    }
-    
-
-    func  sendPostRequest(message: String, sessionID: String) {
-        
-        let url = "https://adelaide-stream.helloalfred.ai/bots/knowledge-bot/v1/ask/stream"
-        
-        var headers: HTTPHeaders = [
-            "Content-Type": "application/json"
-        ]
-        if let token = UserDefaults.standard.string(forKey: "Authorization"), !token.isEmpty {
-            headers.add(name: "Authorization", value: token)
-        }
-
-
-        AF.request(
-            url,
-            method: .post,
-            parameters: ["message": message,"session_id": sessionID],
-            encoding: JSONEncoding.default,
-            headers: headers
-        )
-        .responseData { response in
-
-            switch response.result {
-            case .success(let data):
-                let responseString = String(data: data, encoding: .utf8) ?? ""
-                print("✅ Response:", responseString)
-                self.saveChat(params: [
-                    "session_id": sessionID,
-                    "alfred": responseString,
-                    "user": message,
-                    "refference": [:]
-                ])
-            case .failure(let error):
-                print("❌ API Error:", error.localizedDescription)
             }
         }
     }

@@ -21,20 +21,21 @@ class SignInViewController: BaseViewController {
         super.viewDidLoad()
         UserDefaults.standard.set(true, forKey: "IS_APP_OPENED")
         setupPasswordToggle()
-        setupDelegates()
+//        setupDelegates()
         helloImage.loadGif(asset:"sigin-hello")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
-    
+    /*
     func setupDelegates()
      {
          
          passwordTextFeild.delegate = self
          userNameTextFeild.delegate = self
      }
+    */
     func setupPasswordToggle() {
          toggleButton.setImage(UIImage(named: "hidepassword"), for: .normal)
          toggleButton.setImage(UIImage(named: "showpassword"), for: .selected)

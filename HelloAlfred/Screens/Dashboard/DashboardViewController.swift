@@ -34,7 +34,7 @@ class DashboardViewController: UIViewController
         let defaults = UserDefaults.standard
         let name = defaults.string(forKey: "Username")
         nameTextFeild.text = "Hello \(name ?? "")"
-        getUserStatusApiCall()
+        self.getUserStatusApiCall()
     }
 
     @objc func handleForceLogout() {

@@ -2,7 +2,6 @@ import UIKit
 
 protocol KeyboardHandling: AnyObject {
     func adjustForKeyboard(notification: NSNotification, show: Bool)
-    func scrollToLast()
 }
 
 extension KeyboardHandling where Self: UIViewController {
