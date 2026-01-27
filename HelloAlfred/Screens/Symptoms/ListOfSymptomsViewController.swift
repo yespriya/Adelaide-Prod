@@ -54,45 +54,49 @@ class ListOfSymptomsViewController: UIViewController {
     }
     func addSymptomsApiCall()
     {
-        var params = [:
-        ] as [String : Any]
-        userSelectedValues.forEach { val in
-            // Define a dictionary to map categoryIndex to parameter keys
-            let categoryKeys = [
-                0: "breathnessda",
-                1: "breathnessea",
-                2: "dizziness",
-                3: "col_swet",
-                4: "p_tiredness",
-                5: "chest_pain",
-                6: "pressurechest",
-                7: "worry",
-                8: "weakness",
-                9: "infirmity",
-                10: "nsynacpe",
-                11: "syncope"
-            ]
+        var params = [:] as [String : Any]
+        
+        let categoryKeys = [
+            0: "breathnessda",
+            1: "breathnessea",
+            2: "dizziness",
+            3: "col_swet",
+            4: "p_tiredness",
+            5: "chest_pain",
+            6: "pressurechest",
+            7: "worry",
+            8: "weakness",
+            9: "infirmity",
+            10: "nsynacpe",
+            11: "syncope",
+            12: "tirednessafterwards"
+        ]
+        
+        for i in 0...12 {
+            guard let key = categoryKeys[i] else { continue }
             
-            // Use the dictionary to set the parameters
-            if let key = categoryKeys[val.categoryIndex ?? 0] {
+            if let index = self.doesSymptomsExist(selectedcCategoryIndex: i, in: self.userSelectedValues) {
+                let val = self.userSelectedValues[index]
                 params[key] = [
-                    "frequency": "\(val.frequency ?? "")",
-                    "severity": val.severity,
-                    "quality_of_life": val.eql == false ? "No" : val.eql == true ? "Yes" : nil
+                    "frequency": val.frequency ?? "",
+                    "severity": val.severity ?? "",
+                    "quality_of_life": val.eql == true ? "Yes" : val.eql == false ? "No" : ""
                 ]
+
             } else {
-                print("Incorrect val")
+                params[key] = [
+                    "frequency": "",
+                    "severity": "",
+                    "quality_of_life": ""
+                ]
             }
         }
-        
         
         print("params \(params)")
         
         viewModel.addSymptoms(params: params)
         viewModel.symptomsUpdateSuccess = {
             self.showAlertWithHandler(message: self.viewModel.addSymptomsRes?.message ?? "Error", okActionTitle: "OKay", enableCancel: false, okActionHandler: {_ in
-                let defaults = UserDefaults.standard
-                var array = defaults.array(forKey: "filledArray")  as? [Int] ?? [Int]()
                 
                 self.updateUserStatusApiCall()
             })
