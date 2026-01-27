@@ -52,9 +52,6 @@ class HealthHubViewController: UIViewController, WeekViewControllerDelegate {
         }
     }
     
-
-    
-    
     // MARK: - Setup Methods
     private func setupTableView() {
         weeklyDetailsTableView.delegate = self
@@ -62,21 +59,13 @@ class HealthHubViewController: UIViewController, WeekViewControllerDelegate {
         weeklyContentDetailsTableViewHeightConstraint.constant = 1050
         weeklyDetailsTableView.separatorStyle = .none
         weeklyDetailsTableView.tableFooterView = UIView()
-        
-//        skipButton.layer.cornerRadius = 5
-//        skipButton.layer.borderWidth = 1
-//        skipButton.layer.borderColor = UIColor.lightGray.cgColor
     }
     
     private func fetchInitialData() {
          self.activityIndicator(self.view, startAnimate: true)
-        //        fetchWeeklyStatusApiCall()
         guard !healthViewModel.isLoading else { return }
-        fetchWeeklyStatusApiCall()
         fetchDropDownApiCall()
         fetchWeeklyStatusApiCallBelow5()
-        fetchWeeklyContentApiCall(selectedWeek: selectedWeek.replacingOccurrences(of: "week", with: ""))
-        
     }
     
     // MARK: - Button Actions
@@ -177,6 +166,7 @@ class HealthHubViewController: UIViewController, WeekViewControllerDelegate {
                     currentViewController.needToUpdateWeekStatus = { [weak self] status in
                         self?.updateHealthHubStatus(type: "update_complete_week")
                         self?.healthViewModel.fetchWeeklyContent(params: self?.selectedWeek.replacingOccurrences(of: "week", with: "") ?? "")
+                        self?.fetchInitialData()
                         if let data = self?.healthViewModel.dropDownRes?.data {
                             if let dropDownData = data.first, let nextData = data.dropFirst().first {
                                 self?.selectedWeekLabel.text = dropDownData.label
@@ -193,43 +183,14 @@ class HealthHubViewController: UIViewController, WeekViewControllerDelegate {
         }
     }
     
-    private func fetchWeeklyStatusApiCall() {
-        healthViewModel.fetchWeekStatus()
-        healthViewModel.weeklyStatusFetchSuccess = { [weak self] in
-            guard let self = self else { return }
-            self.activityIndicator(view.self, startAnimate: false)
-            if lastIndexBool == true {
-//                if let weeklyStatusArray = healthViewModel.weeklyStatusRes?.data {
-//                    if let lastTrueIndex = weeklyStatusArray.lastIndex(where: { $0.status == true }) {
-//                        print("Last true index is \(lastTrueIndex + 1)")
-//                        selectedWeekLabel.text = "Module \(lastTrueIndex)"
-//                    } else {
-//                        print("No true element found in the array.")
-//                    }
-//                } else {
-//                    print("Data is nil.")
-//                }
-                lastIndexBool = false
-            }
-            updateDisplayedSections(selectedWeekInt: Int(selectedWeek) ?? 1)
-        }
-        healthViewModel.errorMessageAlert = {
-            self.showAlert(self.healthViewModel.errorMessage ?? "Error")
-        }
-    }
-    
     private func fetchDropDownApiCall() {
         healthViewModel.fetchHealthHubDropDownData()
         healthViewModel.dropDownFetchSuccess = { [weak self] in
             guard let self = self else { return }
             self.activityIndicator(view.self, startAnimate: false)
-            if let data = self.healthViewModel.dropDownRes?.data {
-                if let dropDownData = data.first, let nextData = data.dropFirst().first {
-                    selectedWeekLabel.text = dropDownData.label
-                    lblContentDescription.text = dropDownData.title
-                    self.nextWeekQuizKey = nextData.quizKey ?? ""
-                }
-            }
+            
+            // Check if we can load the latest module now that we have keys
+            self.loadLatestModuleIfReady()
         }
         healthViewModel.errorMessageAlert = {
             self.showAlert(self.healthViewModel.errorMessage ?? "Error")
@@ -252,6 +213,7 @@ class HealthHubViewController: UIViewController, WeekViewControllerDelegate {
             
             guard let detailss = self.healthViewModel.weeklyStatusRes?.data else { return }
             
+            self.loadLatestModuleIfReady()
             // Convert response data into dictionary
             var weeks: [String: Bool] = [:]
             for (key, value) in detailss {
@@ -417,8 +379,6 @@ class HealthHubViewController: UIViewController, WeekViewControllerDelegate {
         lblContentDescription.text = data.title
         self.nextWeekQuizKey = nextWeekQuizKey
         selectedWeekQuizKey = data.quizKey ?? ""
-        fetchWeeklyStatusApiCallBelow5()
-        //fetchWeeklyStatusApiCall()
     }
     
     func setHTMLText(_ htmlString: String, to label: UILabel) {
@@ -566,6 +526,7 @@ extension HealthHubViewController: UITableViewDelegate, UITableViewDataSource {
                                     currentViewController.needToUpdateWeekStatus = { [weak self] status in
                                         self?.updateHealthHubStatus(type: "update_complete_week")
                                         self?.healthViewModel.fetchWeeklyContent(params: self?.selectedWeek.replacingOccurrences(of: "week", with: "") ?? "")
+                                        self?.fetchInitialData()
                                         if let data = self?.healthViewModel.dropDownRes?.data {
                                             if let dropDownData = data.first, let nextData = data.dropFirst().first {
                                                 self?.selectedWeekLabel.text = dropDownData.label
@@ -786,5 +747,40 @@ extension HealthHubViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
+    }
+}
+
+
+// MARK: Helper methods
+
+extension HealthHubViewController {
+    private func loadLatestModuleIfReady() {
+        if let latestModule = healthViewModel.getLatestUnlockedModule() {
+            var nextKey = ""
+            if let data = healthViewModel.dropDownRes?.data,
+               let idx = data.firstIndex(where: {$0.value == latestModule.value}),
+               idx + 1 < data.count {
+                nextKey = data[idx+1].quizKey ?? ""
+            }
+            
+            // Prevent reloading if already on the correct week
+            let newSelectedWeek = latestModule.value?.replacingOccurrences(of: "week ", with: "") ?? ""
+            if selectedWeek == "week0" || selectedWeek != newSelectedWeek {
+                 self.didDismissWithData(latestModule, nextWeekQuizKey: nextKey)
+            }
+        } else if let data = healthViewModel.dropDownRes?.data, healthViewModel.weeklyStatusRes == nil {
+             // Fallback for initial load if status is not ready yet or failed
+             if let dropDownData = data.first, let nextData = data.dropFirst().first {
+                 selectedWeekLabel.text = dropDownData.label
+                 lblContentDescription.text = dropDownData.title
+                 self.nextWeekQuizKey = nextData.quizKey ?? ""
+                 
+                 if selectedWeek == "week0" && weeklyContent.isEmpty {
+                     let weekVal = dropDownData.value?.replacingOccurrences(of: "week ", with: "") ?? "week0"
+                     // Only load if we haven't loaded anything
+                      fetchWeeklyContentApiCall(selectedWeek: weekVal.replacingOccurrences(of: "week", with: ""))
+                 }
+             }
+        }
     }
 }

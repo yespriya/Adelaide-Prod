@@ -239,5 +239,34 @@ class HealthHubViewModel {
             }
         }
     }
+    
+    func getLatestUnlockedModule() -> HealthHubDropDownData? {
+        guard let weekStatus = weeklyStatusRes?.data, let dropDownData = dropDownRes?.data else {
+            return nil
+        }
+        
+        // Filter unlocked weeks (true values)
+        let unlockedWeeks = weekStatus.filter { $0.value == true }.keys
+        
+        // Find max week number
+        var maxWeekNum = -1
+        var maxWeekKey = ""
+        
+        for key in unlockedWeeks {
+            // Extract number from "weekX"
+            let weekNumString = key.replacingOccurrences(of: "week", with: "")
+            if let weekNum = Int(weekNumString) {
+                if weekNum > maxWeekNum {
+                    maxWeekNum = weekNum
+                    maxWeekKey = key
+                }
+            }
+        }
+        
+        guard !maxWeekKey.isEmpty else { return nil }
+        
+        // Find corresponding drop down data
+        return dropDownData.first(where: { $0.value == maxWeekKey })
+    }
 }
 
