@@ -338,7 +338,13 @@ extension QuizViewController {
     func setQuizProgress() {
         self.quizProgress.setProgress(Float(completedQuestionCount) / Float(totalQuestionCount), animated: true)
         let percentage = Int(Float(completedQuestionCount) / Float(totalQuestionCount) * 100)
-        self.lblProgress.text = "\(percentage)% Completed | \(completedQuestionCount) of \(totalQuestionCount) Completed"
+        
+        let weekNumber =  quizKey.replacingOccurrences(of: "module_", with: "")
+        if weekNumber == "pre_test" {
+            self.lblProgress.text = "Answer to personalize your quiz"
+        } else {
+            self.lblProgress.text = "\(percentage)% Completed | \(completedQuestionCount) of \(totalQuestionCount) Completed"
+        }
     }
     
     func resetQuestionData() {

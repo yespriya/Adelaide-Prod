@@ -15,7 +15,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.vectramind.helloalfred</string>
+	<string>com.adelaideprod.helloalfred</string>
 	<key>PROJECT_ID</key>
 	<string>hello-alfred-7d84d</string>
 	<key>STORAGE_BUCKET</key>

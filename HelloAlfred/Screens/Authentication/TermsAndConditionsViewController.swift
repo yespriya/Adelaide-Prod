@@ -16,7 +16,8 @@ class TermsAndConditionsViewController: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         termsAndConditionsTextView.delegate = self
-        fetchTermsAndConditions()
+//        fetchTermsAndConditions()
+        self.updateUI()
         setupCheckbox()
     }
     
@@ -47,6 +48,7 @@ class TermsAndConditionsViewController: UIViewController, UITextViewDelegate {
         acceptButton.isEnabled = isChecked 
     }
     
+    /*
     func fetchTermsAndConditions() {
         viewModel.fetchTermsAndConditions()
         viewModel.fetchTermsAndContionsSuccess = {
@@ -65,6 +67,7 @@ class TermsAndConditionsViewController: UIViewController, UITextViewDelegate {
             }
         }
     }
+    */
     
     func sendTNCApiCall()
     {
@@ -95,7 +98,7 @@ class TermsAndConditionsViewController: UIViewController, UITextViewDelegate {
     
     func updateUI() {
         // Convert HTML to attributed string
-        if let data = viewModel.termsAndConditionsRes?.data?.result?.data(using: .utf8) {
+        if let data = Constants.termsAndPolicy.data(using: .utf8) {
             do {
                 let attributedString = try NSAttributedString(data: data,
                                                               options: [.documentType: NSAttributedString.DocumentType.html,

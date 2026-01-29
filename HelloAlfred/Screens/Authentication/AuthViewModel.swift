@@ -269,6 +269,7 @@ class AuthViewModel {
         }
     }
     
+    /*
     func fetchTermsAndConditions() {
         isLoading = true
         APIClient.fetchTermsAndConditions { result in
@@ -302,6 +303,7 @@ class AuthViewModel {
             }
         }
     }
+    */
     
     func sendTNC(params: [String: Any]) {
         isLoading = true
