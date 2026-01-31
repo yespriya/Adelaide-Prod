@@ -30,8 +30,7 @@ class HealthDetailsViewController: BaseViewController {
     @IBOutlet var diastolicBPTextField: UITextField!
     @IBOutlet var systolicBPTextField: UITextField!
     @IBOutlet var lastUpdateSymptomsLabel: UILabel!
-    
-    @IBOutlet var noHealthDetailsView: UIView!
+
     @IBOutlet var prevHealthDetailsView: Myview!
     
     var tappedTextFeild = UITextField()
@@ -123,7 +122,7 @@ class HealthDetailsViewController: BaseViewController {
     }
     
     @IBAction func infoTapped(_ sender: Any) {
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let storyboard = Constants.mainStoryBoard
 //        if let vc = storyboard.instantiateViewController(withIdentifier: "LastUpdatedDetailsViewController") as? LastUpdatedDetailsViewController {
 //            vc.fromListOfSymptoms = false
 //            vc.modalPresentationStyle = .fullScreen // Optional: Set presentation style

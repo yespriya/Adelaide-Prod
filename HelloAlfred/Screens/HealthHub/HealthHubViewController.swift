@@ -108,7 +108,7 @@ class HealthHubViewController: UIViewController, WeekViewControllerDelegate {
             guard let self = self else { return }
             self.activityIndicator(view.self, startAnimate: false)
             if let data = self.healthViewModel.overviewRes?.data {
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let storyboard = Constants.mainStoryBoard
                 if let currentViewController = storyboard.instantiateViewController(withIdentifier: "HealthHubOverViewViewController") as? HealthHubOverViewViewController {
                     currentViewController.afTopics = data
                     present(currentViewController, animated: true)
@@ -128,7 +128,7 @@ class HealthHubViewController: UIViewController, WeekViewControllerDelegate {
     }
     
     @IBAction func selectWeekClicked(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = Constants.mainStoryBoard
         if let currentViewController = storyboard.instantiateViewController(withIdentifier: "SelectWeekViewController") as? SelectWeekViewController {
             currentViewController.viewModel = healthViewModel
             currentViewController.delegate = self
@@ -138,7 +138,7 @@ class HealthHubViewController: UIViewController, WeekViewControllerDelegate {
     }
     
     @IBAction func videoButtonClicked(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = Constants.mainStoryBoard
         if let currentViewController = storyboard.instantiateViewController(withIdentifier: "VideoListViewController") as? VideoListViewController {
             currentViewController.modalPresentationStyle = .overFullScreen
             present(currentViewController, animated: true)
@@ -156,7 +156,7 @@ class HealthHubViewController: UIViewController, WeekViewControllerDelegate {
             if !(viewModel.quizResponse?.status ?? true) {
                 self.showAlert(viewModel.quizResponse?.message ?? "")
             } else {
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let storyboard = Constants.mainStoryBoard
                 if let currentViewController = storyboard.instantiateViewController(withIdentifier: "QuizViewController") as? QuizViewController {
                     currentViewController.modalPresentationStyle = .overFullScreen
                     print("displaying selected week \(selectedWeek)____> \(selectedWeekQuizKey)")
@@ -518,7 +518,7 @@ extension HealthHubViewController: UITableViewDelegate, UITableViewDataSource {
                         if !(viewModel.quizResponse?.status ?? true) {
                             self.showAlert(viewModel.quizResponse?.message ?? "")
                         } else {
-                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                            let storyboard = Constants.mainStoryBoard
                             if let currentViewController = storyboard.instantiateViewController(withIdentifier: "QuizViewController") as? QuizViewController {
                                 currentViewController.modalPresentationStyle = .overFullScreen
                                 currentViewController.quizKey = selectedWeek.replacingOccurrences(of: "week", with: "") == "0" ? selectedWeekQuizKey.replacingOccurrences(of: "module_", with: "") : selectedWeek.replacingOccurrences(of: "week", with: "")

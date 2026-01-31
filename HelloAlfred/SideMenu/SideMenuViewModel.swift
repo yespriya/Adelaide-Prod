@@ -21,11 +21,11 @@ enum SideMenuItem:String {
     case historyTranscript = "History Transcript"
     case behavioralChat = "Behavioral Chat"
     case historyChat = "History Chat"
-
-
+    case termsAndConditions = "Terms and Conditions"
+    case help = "Help"
 }
 
 class SideMenuViewModel: NSObject {
-    var sideMenuItems:[SideMenuItem] = [.myProfile, .chatWithUs, .goals , .doctors, .knowledgeBank,.schedules,.bookAppointments,.integrations,.historyTranscript,.behavioralChat,.historyChat]
-    var sideMenuIcons:[String] = ["myaccount","chatwithus","goals","doctors","knowledgebank","schedules","bookappointments","integrations", "beta-feature","beta-feature","beta-feature"]
+    var sideMenuItems:[SideMenuItem] = [.myProfile, .chatWithUs, .goals , .doctors, .knowledgeBank,.schedules,.bookAppointments,.integrations,.historyTranscript,.behavioralChat,.historyChat, .termsAndConditions, .help]
+    var sideMenuIcons:[String] = ["myaccount","chatwithus","goals","doctors","knowledgebank","schedules","bookappointments","integrations", "beta-feature","beta-feature","beta-feature", "schedules", "help"]
 }

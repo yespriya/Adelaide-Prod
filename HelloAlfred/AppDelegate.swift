@@ -52,7 +52,7 @@ extension AppDelegate {
     func gotoOnboardingScreen()
     {
         if UserDefaults.standard.bool(forKey: "IS_APP_OPENED") {
-            let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let storyboard:UIStoryboard = Constants.mainStoryBoard
             let viewcontroller: SignInViewController = storyboard.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
             viewcontroller.modalTransitionStyle = .crossDissolve
             
@@ -61,7 +61,7 @@ extension AppDelegate {
             window?.rootViewController = navController
             window?.makeKeyAndVisible()
         } else {
-            let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let storyboard:UIStoryboard = Constants.mainStoryBoard
             let viewcontroller: AppIntroViewController = storyboard.instantiateViewController(withIdentifier: "AppIntroViewController") as! AppIntroViewController
             viewcontroller.modalTransitionStyle = .crossDissolve
             let navController:UINavigationController = UINavigationController.init(rootViewController: viewcontroller)
@@ -71,7 +71,7 @@ extension AppDelegate {
     }
     
     func redirectToLogin(errorMsg: String?) {
-        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard:UIStoryboard = Constants.mainStoryBoard
         let viewcontroller: SignInViewController = storyboard.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
         viewcontroller.modalTransitionStyle = .crossDissolve
         viewcontroller.clearStoredData()
@@ -83,7 +83,7 @@ extension AppDelegate {
     }
     
     func gotoHome() {
-        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard:UIStoryboard = Constants.mainStoryBoard
         let viewcontroller: DashboardViewController = storyboard.instantiateViewController(withIdentifier: "DashboardViewController") as! DashboardViewController
         viewcontroller.modalTransitionStyle = .crossDissolve
         let navController:UINavigationController = UINavigationController.init(rootViewController: viewcontroller)

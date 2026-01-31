@@ -7,11 +7,14 @@ class TermsAndConditionsViewController: UIViewController, UITextViewDelegate {
     @IBOutlet var acceptButton: UIButton! // Accept button to proceed
     
     @IBOutlet var shareButton: Mybutton!
-    weak var delegate: TermsAndConditionsViewControllerDelegate?
+    
+    @IBOutlet var bottomViewHeight: NSLayoutConstraint!
 
     let viewModel = AuthViewModel()
     var isChecked = false // To track checkbox state
     var email = String()
+    var isFromSideMenu: Bool = false
+    var isAccepted:((Bool) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +22,11 @@ class TermsAndConditionsViewController: UIViewController, UITextViewDelegate {
 //        fetchTermsAndConditions()
         self.updateUI()
         setupCheckbox()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        bottomViewHeight.constant = isFromSideMenu ? 0 : 120
     }
     
     @IBAction func closeButtonTapped(_ sender: Any) {
@@ -119,19 +127,16 @@ class TermsAndConditionsViewController: UIViewController, UITextViewDelegate {
     
     // Call this method when you want to dismiss and send data back
     func dismissWithData(selectedData:Bool) {
-        delegate?.didDismissWithData(selectedData)
+        isAccepted?(selectedData)
         self.dismiss(animated: true, completion: nil)
     }
     
-    @nonobjc func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
-        // Handle the URL here
-        UIApplication.shared.open(URL)
+    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
+        if let privacyVC = Constants.mainStoryBoard.instantiateViewController(withIdentifier: "PrivacyPolicyView") as? PrivacyPolicyView {
+            privacyVC.urlToLoad = URL.absoluteString
+            privacyVC.modalPresentationStyle = .overFullScreen
+            present(privacyVC, animated: true, completion: nil)
+        }
         return false
-    }
-    
-    
-}
-
-protocol TermsAndConditionsViewControllerDelegate: AnyObject {
-    func didDismissWithData(_ data: Bool)
+    }    
 }

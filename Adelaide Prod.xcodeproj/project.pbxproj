@@ -210,6 +210,7 @@
 		84F786DE2C1862F8002437A2 /* BehaviouralChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F786DD2C1862F8002437A2 /* BehaviouralChatViewController.swift */; };
 		84F786E02C18679A002437A2 /* ChatKeyboardHandlings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F786DF2C18679A002437A2 /* ChatKeyboardHandlings.swift */; };
 		9BD6E8E857C03C4052F6D144 /* Pods_HelloAlfred.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 734B3A9ABA9A7B5053B9B045 /* Pods_HelloAlfred.framework */; };
+		9DB15F072F2E6CB300C44CA9 /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB15F062F2E6CB300C44CA9 /* PrivacyPolicyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -423,6 +424,7 @@
 		84F786DD2C1862F8002437A2 /* BehaviouralChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BehaviouralChatViewController.swift; sourceTree = "<group>"; };
 		84F786DF2C18679A002437A2 /* ChatKeyboardHandlings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatKeyboardHandlings.swift; sourceTree = "<group>"; };
 		9BF941E45586FCA1B04E698D /* Pods-HelloAlfred.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloAlfred.release.xcconfig"; path = "Target Support Files/Pods-HelloAlfred/Pods-HelloAlfred.release.xcconfig"; sourceTree = "<group>"; };
+		9DB15F062F2E6CB300C44CA9 /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -749,6 +751,7 @@
 		84BA187E2BB3FE5F000131E9 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				9DB15F062F2E6CB300C44CA9 /* PrivacyPolicyView.swift */,
 				8454BC1F2CA597D500C1E533 /* TermsAndConditionsModel.swift */,
 				84A174142BA302710048D679 /* SignInViewController.swift */,
 				848A93A12B91A0CD0048EE10 /* SignUpViewController.swift */,
@@ -1226,6 +1229,7 @@
 				84C9E2062BD20F96002B59DC /* BaseViewController.swift in Sources */,
 				842079F92B9B23730057DB6B /* SubscriptionViewController.swift in Sources */,
 				843CD1B32BC7BBA80016B167 /* ProfileDetailsModel.swift in Sources */,
+				9DB15F072F2E6CB300C44CA9 /* PrivacyPolicyView.swift in Sources */,
 				5051CC2F2E23898400E1F6AA /* TokenManager.swift in Sources */,
 				845802502C083FFF00B3717F /* HistoryChatQuestionModel.swift in Sources */,
 				84E7CD022CA4144100F2012B /* TermsAndConditionsViewController.swift in Sources */,

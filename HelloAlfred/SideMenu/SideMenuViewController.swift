@@ -46,12 +46,10 @@ extension SideMenuViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.titleLabel.text = (viewModel.sideMenuItems[indexPath.row]).rawValue
         cell.titleIcon.image = UIImage(named: viewModel.sideMenuIcons[indexPath.row])
-        if(indexPath.row == viewModel.sideMenuItems.count - 1 || indexPath.row == viewModel.sideMenuItems.count - 2)
-        {
+        let item = viewModel.sideMenuItems[indexPath.row]
+        if item == .behavioralChat || item == .historyChat || item == .historyTranscript {
             cell.betaView.isHidden = false
-        }
-        else
-        {
+        } else {
             cell.betaView.isHidden = true
         }
 
@@ -65,10 +63,7 @@ extension SideMenuViewController: UITableViewDelegate, UITableViewDataSource {
             cell.configureText(selected: false)
         }
         selectedIndexPath = indexPath
-        
-        let cell:SideMenuViewCell = tableView.cellForRow(at: indexPath) as! SideMenuViewCell
-        cell.configureText(selected: true)
-        
+
         dismiss(animated: true, completion: nil)
         if let del = delegate {
             del.sideMenuControllerSelected(menu: viewModel.sideMenuItems[indexPath.row])

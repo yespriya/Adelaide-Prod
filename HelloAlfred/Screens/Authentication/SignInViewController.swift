@@ -89,6 +89,16 @@ class SignInViewController: BaseViewController {
         googleSignInAction()
     }
     
+    @IBAction func helpPhoneClicked(_ sender: Any) {
+        self.makePhoneCall(phoneNumber: "+19713352875")
+    }
+    
+    @IBAction func helpEmailClicked(_ sender: Any) {
+        if let url = URL(string: "mailto:support@helloalfred.ai"), UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url)
+        }
+    }
+
     func signinApiCall()
     {
         isFromSignIn = true

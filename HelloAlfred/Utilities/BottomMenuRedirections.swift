@@ -64,6 +64,17 @@ extension UIViewController: SideMenuDelegate,BottomMenuViewDelegate {
                     print("Error fetching profile completion data: \(error.localizedDescription)")
                 }
             }
+            
+        case .help:
+            showAlert("Phone: +1 971-335-2875\nEmail: support@helloalfred.ai")
+            
+        case .termsAndConditions:
+            if let vc = Constants.mainStoryBoard.instantiateViewController(withIdentifier: "TermsAndConditionsViewController") as? TermsAndConditionsViewController {
+                vc.modalPresentationStyle = .overFullScreen
+                vc.isFromSideMenu = true
+                self.present(vc, animated: true, completion: nil)
+            }
+            
         default:
             print("Unhandled menu item selected.")
         }
