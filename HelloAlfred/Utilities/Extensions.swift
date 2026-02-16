@@ -1,5 +1,6 @@
 import Foundation
 import UIKit
+import SwiftUI
 
 @IBDesignable class Mybutton: UIButton {}
 @IBDesignable class Myview: UIView {}
@@ -286,6 +287,7 @@ extension UIViewController
     
     func clearStoredData()
     {
+        KeychainManager.shared.delete(key: "accessToken")
         UserDefaults.standard.removeObject(forKey: "Authorization")
         UserDefaults.standard.removeObject(forKey: "PateintId")
         UserDefaults.standard.removeObject(forKey: "Username")
@@ -614,4 +616,98 @@ extension NSLayoutConstraint {
         
         return newConstraint
     }
+}
+
+extension Dictionary {
+    func toJSONString() -> String {
+        do {
+            return String(data: try JSONSerialization.data(withJSONObject: self), encoding: .utf8) ?? ""
+        } catch {
+            print(error)
+            return ""
+        }
+    }
+}
+
+extension Data {
+    func convertToDictionary() -> [String: Any] {
+        do {
+            let json = try JSONSerialization.jsonObject(with: self, options: []) as? [String: Any]
+            return json ?? [:]
+        } catch {
+            print(error)
+        }
+        return [:]
+    }
+}
+
+extension Font {
+    static let poppinsRegular10 = Font.custom("Poppins-Regular", size: 10)
+    static let poppinsRegular11 = Font.custom("Poppins-Regular", size: 11)
+    static let poppinsRegular12 = Font.custom("Poppins-Regular", size: 12)
+    static let poppinsRegular13 = Font.custom("Poppins-Regular", size: 13)
+    static let poppinsRegular14 = Font.custom("Poppins-Regular", size: 14)
+    static let poppinsRegular15 = Font.custom("Poppins-Regular", size: 15)
+    static let poppinsRegular16 = Font.custom("Poppins-Regular", size: 16)
+    static let poppinsRegular18 = Font.custom("Poppins-Regular", size: 18)
+    static let poppinsRegular20 = Font.custom("Poppins-Regular", size: 20)
+    static let poppinsRegular22 = Font.custom("Poppins-Regular", size: 22)
+    
+    static let poppinsSemiBold7 = Font.custom("Poppins-SemiBold", size: 7)
+    static let poppinsSemiBold8 = Font.custom("Poppins-SemiBold", size: 8)
+    static let poppinsSemiBold9 = Font.custom("Poppins-SemiBold", size: 9)
+    static let poppinsSemiBold10 = Font.custom("Poppins-SemiBold", size: 10)
+    static let poppinsSemiBold11 = Font.custom("Poppins-SemiBold", size: 11)
+    static let poppinsSemiBold12 = Font.custom("Poppins-SemiBold", size: 12)
+    static let poppinsSemiBold13 = Font.custom("Poppins-SemiBold", size: 13)
+    static let poppinsSemiBold14 = Font.custom("Poppins-SemiBold", size: 14)
+    static let poppinsSemiBold15 = Font.custom("Poppins-SemiBold", size: 15)
+    static let poppinsSemiBold16 = Font.custom("Poppins-SemiBold", size: 16)
+    static let poppinsSemiBold18 = Font.custom("Poppins-SemiBold", size: 18)
+    static let poppinsSemiBold20 = Font.custom("Poppins-SemiBold", size: 20)
+    static let poppinsSemiBold22 = Font.custom("Poppins-SemiBold", size: 22)
+    
+    static let poppinsMedium10 = Font.custom("Poppins-Medium", size: 10)
+    static let poppinsMedium11 = Font.custom("Poppins-Medium", size: 11)
+    static let poppinsMedium12 = Font.custom("Poppins-Medium", size: 12)
+    static let poppinsMedium13 = Font.custom("Poppins-Medium", size: 13)
+    static let poppinsMedium14 = Font.custom("Poppins-Medium", size: 14)
+    static let poppinsMedium15 = Font.custom("Poppins-Medium", size: 15)
+    static let poppinsMedium16 = Font.custom("Poppins-Medium", size: 16)
+    static let poppinsMedium18 = Font.custom("Poppins-Medium", size: 18)
+    static let poppinsMedium20 = Font.custom("Poppins-Medium", size: 20)
+    static let poppinsMedium22 = Font.custom("Poppins-Medium", size: 22)
+    
+    static let poppinsBold10 = Font.custom("Poppins-Bold", size: 10)
+    static let poppinsBold11 = Font.custom("Poppins-Bold", size: 11)
+    static let poppinsBold12 = Font.custom("Poppins-Bold", size: 12)
+    static let poppinsBold13 = Font.custom("Poppins-Bold", size: 13)
+    static let poppinsBold14 = Font.custom("Poppins-Bold", size: 14)
+    static let poppinsBold15 = Font.custom("Poppins-Bold", size: 15)
+    static let poppinsBold16 = Font.custom("Poppins-Bold", size: 16)
+    static let poppinsBold18 = Font.custom("Poppins-Bold", size: 18)
+    static let poppinsBold20 = Font.custom("Poppins-Bold", size: 20)
+    static let poppinsBold22 = Font.custom("Poppins-Bold", size: 22)
+    
+    static let poppinsBlack10 = Font.custom("Poppins-Black", size: 10)
+    static let poppinsBlack11 = Font.custom("Poppins-Black", size: 11)
+    static let poppinsBlack12 = Font.custom("Poppins-Black", size: 12)
+    static let poppinsBlack13 = Font.custom("Poppins-Black", size: 13)
+    static let poppinsBlack14 = Font.custom("Poppins-Black", size: 14)
+    static let poppinsBlack15 = Font.custom("Poppins-Black", size: 15)
+    static let poppinsBlack16 = Font.custom("Poppins-Black", size: 16)
+    static let poppinsBlack18 = Font.custom("Poppins-Black", size: 18)
+    static let poppinsBlack20 = Font.custom("Poppins-Black", size: 20)
+    static let poppinsBlack22 = Font.custom("Poppins-Black", size: 22)
+    
+    static let poppinsBlackItalic10 = Font.custom("Poppins-BlackItalic", size: 10)
+    static let poppinsBlackItalic11 = Font.custom("Poppins-BlackItalic", size: 11)
+    static let poppinsBlackItalic12 = Font.custom("Poppins-BlackItalic", size: 12)
+    static let poppinsBlackItalic13 = Font.custom("Poppins-BlackItalic", size: 13)
+    static let poppinsBlackItalic14 = Font.custom("Poppins-BlackItalic", size: 14)
+    static let poppinsBlackItalic15 = Font.custom("Poppins-BlackItalic", size: 15)
+    static let poppinsBlackItalic16 = Font.custom("Poppins-BlackItalic", size: 16)
+    static let poppinsBlackItalic18 = Font.custom("Poppins-BlackItalic", size: 18)
+    static let poppinsBlackItalic20 = Font.custom("Poppins-BlackItalic", size: 20)
+    static let poppinsBlackItalic22 = Font.custom("Poppins-BlackItalic", size: 22)
 }

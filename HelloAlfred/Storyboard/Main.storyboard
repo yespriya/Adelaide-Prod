@@ -14645,6 +14645,24 @@ successfully</string>
             </objects>
             <point key="canvasLocation" x="32556.48854961832" y="-39.436619718309863"/>
         </scene>
+        <!--Learning ProgressVC-->
+        <scene sceneID="pcK-vH-cwa">
+            <objects>
+                <viewController storyboardIdentifier="LearningProgressVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zov-ov-7Fk" customClass="LearningProgressVC" customModule="Adelaide_Prod" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fTA-LQ-YQ9"/>
+                        <viewControllerLayoutGuide type="bottom" id="YdM-ac-rLN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DoB-sR-hnK">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.95294117649999999" green="0.95686274510000002" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lz9-hN-6RU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="35985.496183206109" y="-27.464788732394368"/>
+        </scene>
     </scenes>
     <resources>
         <image name="ACH" width="20.666666030883789" height="21"/>
@@ -14663,8 +14681,8 @@ successfully</string>
         <image name="bankcard" width="22" height="18"/>
         <image name="bloodpressure" width="32" height="34"/>
         <image name="blue-info" width="18.666666030883789" height="18.666666030883789"/>
-        <image name="calendar" width="16" height="17.333333969116211"/>
         <image name="calendar" catalog="system" width="128" height="107"/>
+        <image name="calendar" width="16" height="17.333333969116211"/>
         <image name="calender-back" width="21.333333969116211" height="39.333332061767578"/>
         <image name="calender-next" width="21.333333969116211" height="39.333332061767578"/>
         <image name="calenderNext" width="21.333333969116211" height="39.333332061767578"/>

@@ -210,6 +210,29 @@
 		84F786DE2C1862F8002437A2 /* BehaviouralChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F786DD2C1862F8002437A2 /* BehaviouralChatViewController.swift */; };
 		84F786E02C18679A002437A2 /* ChatKeyboardHandlings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F786DF2C18679A002437A2 /* ChatKeyboardHandlings.swift */; };
 		9BD6E8E857C03C4052F6D144 /* Pods_HelloAlfred.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 734B3A9ABA9A7B5053B9B045 /* Pods_HelloAlfred.framework */; };
+		9D66FE662F4389B2009014F2 /* APIRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D66FE602F4389B2009014F2 /* APIRoute.swift */; };
+		9D66FE672F4389B2009014F2 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D66FE5E2F4389B2009014F2 /* UserRepository.swift */; };
+		9D66FE682F4389B2009014F2 /* EducationChatRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D66FE5D2F4389B2009014F2 /* EducationChatRepository.swift */; };
+		9D66FE692F4389B2009014F2 /* APIUploadData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D66FE632F4389B2009014F2 /* APIUploadData.swift */; };
+		9D66FE6A2F4389B2009014F2 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D66FE5B2F4389B2009014F2 /* BaseResponse.swift */; };
+		9D66FE6B2F4389B2009014F2 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D66FE612F4389B2009014F2 /* APIService.swift */; };
+		9D66FE6C2F4389B2009014F2 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D66FE622F4389B2009014F2 /* APIError.swift */; };
+		9D66FE702F438B48009014F2 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D66FE6E2F438B48009014F2 /* KeychainManager.swift */; };
+		9D66FE712F438B48009014F2 /* LoaderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D66FE6D2F438B48009014F2 /* LoaderManager.swift */; };
+		9D66FE742F438CC5009014F2 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 9D66FE732F438CC5009014F2 /* RxBlocking */; };
+		9D66FE762F438CC5009014F2 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 9D66FE752F438CC5009014F2 /* RxCocoa */; };
+		9D66FE782F438CC5009014F2 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9D66FE772F438CC5009014F2 /* RxSwift */; };
+		9D66FF962F438D19009014F2 /* BarAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D66FF932F438D19009014F2 /* BarAnnotationView.swift */; };
+		9D66FF972F438D19009014F2 /* ModulePerformanceBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D66FF912F438D19009014F2 /* ModulePerformanceBarChart.swift */; };
+		9D66FF982F438D19009014F2 /* LearningProgressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D66FF8F2F438D19009014F2 /* LearningProgressVC.swift */; };
+		9D66FF992F438D19009014F2 /* LearningProgressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D66FF882F438D19009014F2 /* LearningProgressModel.swift */; };
+		9D66FF9A2F438D19009014F2 /* QuizSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D66FF8E2F438D19009014F2 /* QuizSummaryView.swift */; };
+		9D66FF9B2F438D19009014F2 /* LearningProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D66FF922F438D19009014F2 /* LearningProgressView.swift */; };
+		9D66FF9C2F438D19009014F2 /* LearningProgressLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D66FF8C2F438D19009014F2 /* LearningProgressLabels.swift */; };
+		9D66FF9D2F438D19009014F2 /* LearningProgessViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D66FF8A2F438D19009014F2 /* LearningProgessViewModel.swift */; };
+		9D66FF9E2F438D19009014F2 /* ModulePerformanceDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D66FF902F438D19009014F2 /* ModulePerformanceDetailsView.swift */; };
+		9D66FFA22F438FD4009014F2 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D66FF9F2F438FD4009014F2 /* Color+.swift */; };
+		9D66FFA32F438FD4009014F2 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D66FFA02F438FD4009014F2 /* String+.swift */; };
 		9DB15F072F2E6CB300C44CA9 /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB15F062F2E6CB300C44CA9 /* PrivacyPolicyView.swift */; };
 /* End PBXBuildFile section */
 
@@ -424,6 +447,26 @@
 		84F786DD2C1862F8002437A2 /* BehaviouralChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BehaviouralChatViewController.swift; sourceTree = "<group>"; };
 		84F786DF2C18679A002437A2 /* ChatKeyboardHandlings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatKeyboardHandlings.swift; sourceTree = "<group>"; };
 		9BF941E45586FCA1B04E698D /* Pods-HelloAlfred.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloAlfred.release.xcconfig"; path = "Target Support Files/Pods-HelloAlfred/Pods-HelloAlfred.release.xcconfig"; sourceTree = "<group>"; };
+		9D66FE5B2F4389B2009014F2 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
+		9D66FE5D2F4389B2009014F2 /* EducationChatRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationChatRepository.swift; sourceTree = "<group>"; };
+		9D66FE5E2F4389B2009014F2 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		9D66FE602F4389B2009014F2 /* APIRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRoute.swift; sourceTree = "<group>"; };
+		9D66FE612F4389B2009014F2 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		9D66FE622F4389B2009014F2 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		9D66FE632F4389B2009014F2 /* APIUploadData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUploadData.swift; sourceTree = "<group>"; };
+		9D66FE6D2F438B48009014F2 /* LoaderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderManager.swift; sourceTree = "<group>"; };
+		9D66FE6E2F438B48009014F2 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		9D66FF882F438D19009014F2 /* LearningProgressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningProgressModel.swift; sourceTree = "<group>"; };
+		9D66FF8A2F438D19009014F2 /* LearningProgessViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningProgessViewModel.swift; sourceTree = "<group>"; };
+		9D66FF8C2F438D19009014F2 /* LearningProgressLabels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningProgressLabels.swift; sourceTree = "<group>"; };
+		9D66FF8E2F438D19009014F2 /* QuizSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSummaryView.swift; sourceTree = "<group>"; };
+		9D66FF8F2F438D19009014F2 /* LearningProgressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningProgressVC.swift; sourceTree = "<group>"; };
+		9D66FF902F438D19009014F2 /* ModulePerformanceDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModulePerformanceDetailsView.swift; sourceTree = "<group>"; };
+		9D66FF912F438D19009014F2 /* ModulePerformanceBarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModulePerformanceBarChart.swift; sourceTree = "<group>"; };
+		9D66FF922F438D19009014F2 /* LearningProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningProgressView.swift; sourceTree = "<group>"; };
+		9D66FF932F438D19009014F2 /* BarAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarAnnotationView.swift; sourceTree = "<group>"; };
+		9D66FF9F2F438FD4009014F2 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
+		9D66FFA02F438FD4009014F2 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		9DB15F062F2E6CB300C44CA9 /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -436,8 +479,11 @@
 				84A14D9E2EE093E900C45F7D /* GoogleSignIn in Frameworks */,
 				84F4C07A2D49F6BB0078210F /* JWTKit in Frameworks */,
 				84A14D992EE092C700C45F7D /* Alamofire in Frameworks */,
+				9D66FE742F438CC5009014F2 /* RxBlocking in Frameworks */,
 				84A14DAB2EE0969300C45F7D /* SDWebImage in Frameworks */,
+				9D66FE762F438CC5009014F2 /* RxCocoa in Frameworks */,
 				84A14DB32EE097A500C45F7D /* FLAnimatedImage in Frameworks */,
+				9D66FE782F438CC5009014F2 /* RxSwift in Frameworks */,
 				84A14DA02EE093E900C45F7D /* GoogleSignInSwift in Frameworks */,
 				84A14E112EE09C7000C45F7D /* Highcharts.xcframework in Frameworks */,
 				84A14DA82EE0962700C45F7D /* IQKeyboardManagerSwift in Frameworks */,
@@ -495,6 +541,7 @@
 		8404A61C2CCB3B6C00937E1C /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				9D66FF952F438D19009014F2 /* Learning Progress */,
 				84BA18802BB3FF31000131E9 /* Payment */,
 				84BA18812BB3FF63000131E9 /* HealthHub */,
 				84BA187F2BB3FEBD000131E9 /* Subscription */,
@@ -555,6 +602,7 @@
 		84635F572B99E25F0042B619 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				9D66FE652F4389B2009014F2 /* Services */,
 				84E81EAB2F213EF2007ED7E3 /* Notification+.swift */,
 				843B4BAF2F02D30500E106BD /* Struct+.swift */,
 				5051CC2E2E23897C00E1F6AA /* TokenManager.swift */,
@@ -617,6 +665,7 @@
 		8483F47A2B8CA68C00E8BE1F /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				9D66FE6F2F438B48009014F2 /* Managers */,
 				84BA18822BB44A0C000131E9 /* CommonResModel.swift */,
 				848A93A32B959A900048EE10 /* DatePickerViewController.swift */,
 				84635F462B989B180042B619 /* HeaderMenu.swift */,
@@ -879,6 +928,7 @@
 		84E8E9752B8C66660092F746 /* HelloAlfred */ = {
 			isa = PBXGroup;
 			children = (
+				9D66FFA12F438FD4009014F2 /* Extensions */,
 				84A14DB42EE0982500C45F7D /* Third Party */,
 				5051CC302E2399B200E1F6AA /* Designable Class */,
 				84E8E9762B8C66660092F746 /* AppDelegate.swift */,
@@ -916,6 +966,110 @@
 				9BF941E45586FCA1B04E698D /* Pods-HelloAlfred.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		9D66FE5C2F4389B2009014F2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9D66FE5B2F4389B2009014F2 /* BaseResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9D66FE5F2F4389B2009014F2 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				9D66FE5D2F4389B2009014F2 /* EducationChatRepository.swift */,
+				9D66FE5E2F4389B2009014F2 /* UserRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		9D66FE642F4389B2009014F2 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				9D66FE602F4389B2009014F2 /* APIRoute.swift */,
+				9D66FE612F4389B2009014F2 /* APIService.swift */,
+				9D66FE622F4389B2009014F2 /* APIError.swift */,
+				9D66FE632F4389B2009014F2 /* APIUploadData.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		9D66FE652F4389B2009014F2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9D66FE5C2F4389B2009014F2 /* Model */,
+				9D66FE5F2F4389B2009014F2 /* Repository */,
+				9D66FE642F4389B2009014F2 /* API */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		9D66FE6F2F438B48009014F2 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				9D66FE6D2F438B48009014F2 /* LoaderManager.swift */,
+				9D66FE6E2F438B48009014F2 /* KeychainManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		9D66FF892F438D19009014F2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9D66FF882F438D19009014F2 /* LearningProgressModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9D66FF8B2F438D19009014F2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9D66FF8A2F438D19009014F2 /* LearningProgessViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9D66FF8D2F438D19009014F2 /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				9D66FF8C2F438D19009014F2 /* LearningProgressLabels.swift */,
+			);
+			path = Labels;
+			sourceTree = "<group>";
+		};
+		9D66FF942F438D19009014F2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9D66FF8E2F438D19009014F2 /* QuizSummaryView.swift */,
+				9D66FF8F2F438D19009014F2 /* LearningProgressVC.swift */,
+				9D66FF902F438D19009014F2 /* ModulePerformanceDetailsView.swift */,
+				9D66FF912F438D19009014F2 /* ModulePerformanceBarChart.swift */,
+				9D66FF922F438D19009014F2 /* LearningProgressView.swift */,
+				9D66FF932F438D19009014F2 /* BarAnnotationView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9D66FF952F438D19009014F2 /* Learning Progress */ = {
+			isa = PBXGroup;
+			children = (
+				9D66FF892F438D19009014F2 /* Model */,
+				9D66FF8B2F438D19009014F2 /* ViewModel */,
+				9D66FF8D2F438D19009014F2 /* Labels */,
+				9D66FF942F438D19009014F2 /* Views */,
+			);
+			path = "Learning Progress";
+			sourceTree = "<group>";
+		};
+		9D66FFA12F438FD4009014F2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9D66FF9F2F438FD4009014F2 /* Color+.swift */,
+				9D66FFA02F438FD4009014F2 /* String+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		F7D9630DAE915E65D7076763 /* Frameworks */ = {
@@ -960,6 +1114,9 @@
 				84A14DAC2EE0969300C45F7D /* SDWebImageMapKit */,
 				84A14DAF2EE096FF00C45F7D /* SideMenu */,
 				84A14DB22EE097A500C45F7D /* FLAnimatedImage */,
+				9D66FE732F438CC5009014F2 /* RxBlocking */,
+				9D66FE752F438CC5009014F2 /* RxCocoa */,
+				9D66FE772F438CC5009014F2 /* RxSwift */,
 			);
 			productName = HelloAlfred;
 			productReference = 84E8E9732B8C66660092F746 /* Adelaide Prod.app */;
@@ -1000,6 +1157,7 @@
 				84A14DA92EE0969300C45F7D /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				84A14DAE2EE096FF00C45F7D /* XCRemoteSwiftPackageReference "SideMenu" */,
 				84A14DB12EE097A500C45F7D /* XCRemoteSwiftPackageReference "FLAnimatedImage" */,
+				9D66FE722F438CC5009014F2 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 84E8E9742B8C66660092F746 /* Products */;
 			projectDirPath = "";
@@ -1148,6 +1306,15 @@
 				848A939C2B8F1F0B0048EE10 /* SelectAccountViewController.swift in Sources */,
 				84C9F1EF2C90111D00857601 /* ImageSwipeViewController.swift in Sources */,
 				84635F552B99E2520042B619 /* APIRouter.swift in Sources */,
+				9D66FF962F438D19009014F2 /* BarAnnotationView.swift in Sources */,
+				9D66FF972F438D19009014F2 /* ModulePerformanceBarChart.swift in Sources */,
+				9D66FF982F438D19009014F2 /* LearningProgressVC.swift in Sources */,
+				9D66FF992F438D19009014F2 /* LearningProgressModel.swift in Sources */,
+				9D66FF9A2F438D19009014F2 /* QuizSummaryView.swift in Sources */,
+				9D66FF9B2F438D19009014F2 /* LearningProgressView.swift in Sources */,
+				9D66FF9C2F438D19009014F2 /* LearningProgressLabels.swift in Sources */,
+				9D66FF9D2F438D19009014F2 /* LearningProgessViewModel.swift in Sources */,
+				9D66FF9E2F438D19009014F2 /* ModulePerformanceDetailsView.swift in Sources */,
 				8443404C2C7DAAF400097B26 /* UIImage+gif.swift in Sources */,
 				84E8DB612C5E46D600A03056 /* HealthHubOverviewTableViewCell.swift in Sources */,
 				84E8DB5D2C5E2CD800A03056 /* HealthHubOverViewViewController.swift in Sources */,
@@ -1160,6 +1327,8 @@
 				848A93A02B9192010048EE10 /* DottedBorderButton.swift in Sources */,
 				843CD1B02BC77B3C0016B167 /* ProfileEditViewController.swift in Sources */,
 				847396392BBD342300C8D3AF /* ListOfSymptomsViewController.swift in Sources */,
+				9D66FFA22F438FD4009014F2 /* Color+.swift in Sources */,
+				9D66FFA32F438FD4009014F2 /* String+.swift in Sources */,
 				84364D3F2C468E9000D6E9D4 /* CircularProgressBar.swift in Sources */,
 				84635F4E2B99E2490042B619 /* ChatModel.swift in Sources */,
 				84A61FE82CB56F3E003CA35E /* ChatFeedbackViewController.swift in Sources */,
@@ -1179,6 +1348,13 @@
 				84635F562B99E2520042B619 /* APIClient.swift in Sources */,
 				8413BE292C77725E009ACB78 /* HeaderMenuRedirections.swift in Sources */,
 				844855012C355C3600544FAE /* EducationalChatViewController.swift in Sources */,
+				9D66FE662F4389B2009014F2 /* APIRoute.swift in Sources */,
+				9D66FE672F4389B2009014F2 /* UserRepository.swift in Sources */,
+				9D66FE682F4389B2009014F2 /* EducationChatRepository.swift in Sources */,
+				9D66FE692F4389B2009014F2 /* APIUploadData.swift in Sources */,
+				9D66FE6A2F4389B2009014F2 /* BaseResponse.swift in Sources */,
+				9D66FE6B2F4389B2009014F2 /* APIService.swift in Sources */,
+				9D66FE6C2F4389B2009014F2 /* APIError.swift in Sources */,
 				842A9A3B2BA9706200456694 /* VideoPlayerViewController.swift in Sources */,
 				848A93A22B91A0CD0048EE10 /* SignUpViewController.swift in Sources */,
 				842A9A3D2BAAC2B700456694 /* HealthHubViewController.swift in Sources */,
@@ -1258,6 +1434,8 @@
 				84E3092B2D02E56500F53AEF /* VideoListContentModel.swift in Sources */,
 				84CAAF712BFB339D009A1961 /* OpticalRiskManagementViewController.swift in Sources */,
 				84F786E02C18679A002437A2 /* ChatKeyboardHandlings.swift in Sources */,
+				9D66FE702F438B48009014F2 /* KeychainManager.swift in Sources */,
+				9D66FE712F438B48009014F2 /* LoaderManager.swift in Sources */,
 				84CAAF732BFB3426009A1961 /* RiskListTableViewCell.swift in Sources */,
 				84BF75C32BE4EEAE00937ECD /* HistoryChatFormTableViewCell.swift in Sources */,
 				8494F17F2BBFED6F007E7F06 /* goalCategoriesTableViewCell.swift in Sources */,
@@ -1437,7 +1615,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1479,7 +1657,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1601,6 +1779,14 @@
 				minimumVersion = 5.1.1;
 			};
 		};
+		9D66FE722F438CC5009014F2 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.10.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1663,6 +1849,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 84F4C0782D49F6BA0078210F /* XCRemoteSwiftPackageReference "jwt-kit" */;
 			productName = JWTKit;
+		};
+		9D66FE732F438CC5009014F2 /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9D66FE722F438CC5009014F2 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
+		};
+		9D66FE752F438CC5009014F2 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9D66FE722F438CC5009014F2 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		9D66FE772F438CC5009014F2 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9D66FE722F438CC5009014F2 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

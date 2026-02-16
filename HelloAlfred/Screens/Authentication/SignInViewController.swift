@@ -119,8 +119,8 @@ class SignInViewController: BaseViewController {
             if let token = self.viewModel.signInData?.data?.token {
                 let userdetails = self.decodeJWT(part: token)
                 print(userdetails)
-                
-                UserDefaults.standard.set("Bearer \(self.viewModel.signInData?.data?.token ?? "")", forKey: "Authorization")
+                KeychainManager.shared.save(key: "accessToken", value: token)
+                UserDefaults.standard.set("Bearer \(token)", forKey: "Authorization")
                 UserDefaults.standard.set(userdetails?["patient_id"] ?? "Invalid ID", forKey: "PateintId")
                 UserDefaults.standard.set(userdetails?["username"] ?? "Invalid name", forKey: "Username")
                 UserDefaults.standard.set(userdetails?["profilePictureUrl"] ?? "Invalid img", forKey: "ProfileImg")

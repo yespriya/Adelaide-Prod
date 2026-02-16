@@ -12,11 +12,13 @@ struct DataService
   //  static let developmentBaseURL = "https://dev.api.helloalfred.ai/"
     
     static let developmentBaseURL = "https://api.adelaide.helloalfred.ai"
+    static let superAdminDevelopmentBaseURL = "https://api.adelaide.helloalfred.ai/"
 }
 
 public struct Constants {
     static let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
-
+    static let subdomain: String = "api.adelaide.helloalfred.ai"
+    
    static let termsAndPolicy = """
 <!DOCTYPE html>\n
 <html lang=\"en\">
