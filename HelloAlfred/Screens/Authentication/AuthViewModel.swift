@@ -125,10 +125,8 @@ class AuthViewModel {
                     self.generateOTPRes = responseData
                     self.generateOTPSuccess?()
                 case 400..<501:
-//                    self.errorMessage = responseData.message
-//                    self.errorMessageAlert?()
-                    self.generateOTPRes = responseData
-                    self.generateOTPSuccess?()
+                    self.errorMessage = responseData.message
+                    self.errorMessageAlert?()
                 default:
                     debugPrint("Unknown Error: Status code \(statusCode)")
                 }

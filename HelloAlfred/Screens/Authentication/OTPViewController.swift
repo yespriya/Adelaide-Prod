@@ -25,10 +25,9 @@ class OTPViewController: BaseViewController
     @IBOutlet var otpView4: Myview!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var resendButton: UIButton!
-    var isFromForgotPassword:Bool = false
-      var otpSentLabelText = ""
-      var timer: Timer?
-      var remainingTime = 30
+    var otpSentLabelText = ""
+    var timer: Timer?
+    var remainingTime = 30
     var isFromSignIN:Bool = false
     var userData:SignupUserData?
     let viewModel=AuthViewModel()
@@ -61,7 +60,8 @@ class OTPViewController: BaseViewController
     }
        
     @IBAction func verifyClicked(_ sender: Any) {
-        var otp = getOTPString()
+        let otp = getOTPString()
+        
         if isValidOTP(otp)
         {
             verifyOTPApiCall(otp: otp)
@@ -70,8 +70,6 @@ class OTPViewController: BaseViewController
         {
             showAlert("Please enter the OTP")
         }
-        
-        
     }
     
     @IBAction func backPressed(_ sender: Any) {
@@ -85,17 +83,10 @@ class OTPViewController: BaseViewController
     
     
     @IBAction func resendCallButtonTapped(_ sender: UIButton) {
-//        if let mobile = userData?.mobile, !mobile.isEmpty {
             generateOTPApiCall(smsType: "voice")
-//        } else {
-//            self.showAlert("Mobile number not found.")
-//        }
     }
     
        func setupResendButton() {
-           if isFromForgotPassword == false {
-               resendVoiceButton.isHidden = true
-           }
            resendVoiceButton.isEnabled = false
            resendButton.isEnabled = false
            resendButton.alpha = 0.5
@@ -194,32 +185,30 @@ class OTPViewController: BaseViewController
     {
         timerLabel.text = "Sending OTP"
         self.view.endEditing(true)
-        var params: [String: Any]
-        if(userData?.firstName == nil)
-        {
-             params = [
+        let params  = [
                 "email": userData?.email ?? "",
                 "username":  "\(userData?.firstName ?? "") \(userData?.lastName ?? "")",
                 "mobile": userData?.mobile ?? "",
                 "sms_type" : smsType
             ] as [String : Any]
-        }
-        else
-        {
-            params = [
-                "email": userData?.email ?? "",
-                "username": "\(userData?.firstName ?? "") \(userData?.lastName ?? "")",
-                "mobile": userData?.mobile ?? "",
-                "sms_type" : smsType
-            ] as [String : Any]
-        }
+
         print("params \(params)")
         viewModel.generateOTP(params: params)
         viewModel.generateOTPSuccess = {
             self.timerLabel.text = "OTP sent successfully."
             self.resetTimer()
-
         }
+        
+        viewModel.loadingStatus =
+        {
+            if self.viewModel.isLoading {
+                self.activityIndicator(self.view, startAnimate: true)
+            } else {
+                self.activityIndicator(self.view, startAnimate: false)
+                UIApplication.shared.endIgnoringInteractionEvents()
+            }
+        }
+        
         viewModel.errorMessageAlert = {
             self.resetTimer()
             self.showAlertWithHandler(message: self.viewModel.errorMessage ?? "Error",  okActionTitle: "Okay", enableCancel: false)
